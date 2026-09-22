@@ -354,13 +354,34 @@ a.card-link:hover {
 }
 
 .dev-list { padding: 0; margin: 0.6rem 0 0; }
+/* Section heading (a <summary> when the wrapper is a <details>). Behaves like
+   a clickable header with a disclosure triangle. */
 .dev-heading {
+  cursor: pointer;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--ink-soft);
   margin-bottom: 0.3rem;
+  padding: 0.15rem 0;
+  outline: none;
+  list-style: none;
 }
+.dev-heading::-webkit-details-marker { display: none; }
+.dev-heading::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-size: 0.7em;
+  color: var(--ink-soft);
+  transition: transform 0.15s ease;
+}
+details[open] > .dev-heading::before {
+  transform: rotate(90deg);
+  color: var(--oxblood);
+}
+details[open] > .dev-heading { color: var(--oxblood); }
+.dev-heading:hover { color: var(--oxblood); }
 .dev-entry {
   border-left: 2px solid var(--rule);
   padding: 0 0 0 0.75rem;
@@ -413,6 +434,7 @@ a.card-link:hover {
 }
 /* Stack collapsible sections tightly and give each section a little air. */
 .dev-list + .dev-list { margin-top: 0.9rem; }
+/* Keep the section-heading count pill aligned inline with the label. */
 .dev-heading { display: flex; align-items: center; gap: 0.4rem; }
 
 /* Legacy — session-notes-source label used in a couple older places. Kept
