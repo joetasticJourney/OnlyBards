@@ -10,16 +10,16 @@
 :root {
   /* -- the three -- */
   --brand:       #1ebde4;   /* logo cyan — accents, active states, borders */
-  --brand-deep:  #0f7a94;   /* WCAG-AA cyan on --bg (4.7:1) for text/links   */
-  --brand-tint:  #e4f6fb;   /* very pale cyan for hover fills / subtle panels */
-  --ink:         #1a1d21;   /* body text — near-black, slight warmth         */
-  --bg:          #f6f8fa;   /* page background — cool near-white              */
+  --brand-deep:  #0f7a94;   /* darker cyan for text/links on light bg      */
+  --brand-tint:  #dff1f6;   /* very pale cyan for hover fills on light bg  */
+  --ink:         #1a1d21;   /* body text — near-black, slight warmth       */
+  --bg:          #e6e9ee;   /* page background — soft cool grey (calmer)   */
 
   /* -- disciplined greys derived from the three (needed for hierarchy) -- */
-  --ink-soft:    #4a5058;   /* secondary text                                */
-  --muted:       #7a808a;   /* tertiary text, timestamps                     */
-  --surface:     #ffffff;   /* card/panel — actual white so it lifts off bg  */
-  --border:      #e1e6ea;   /* light grey borders / ruling lines             */
+  --ink-soft:    #4a5058;   /* secondary text                              */
+  --muted:       #7a808a;   /* tertiary text, timestamps                   */
+  --surface:     #f5f7f9;   /* card/panel — slightly lighter than bg       */
+  --border:      #cfd5db;   /* light grey borders / ruling lines           */
   --shadow:      rgba(26, 29, 33, 0.08);
 
   /* -- legacy variable names kept so unmigrated rules still work -- */
@@ -29,9 +29,24 @@
   --paper-edge:  var(--border);
   --teal:        var(--brand);
   --teal-deep:   var(--brand-deep);
-  --gilt:        var(--brand-deep);   /* was warm gold; now brand-deep for the same visual role */
-  --verdigris:   var(--brand);        /* was mossy green; now brand cyan for "positive" seals   */
-  --oxblood:     var(--ink);          /* was copper/red; now ink for "closed/dead" states       */
+  --gilt:        var(--brand-deep);
+  --verdigris:   var(--brand);
+  --oxblood:     var(--ink);
+}
+
+/* -- dark mode: only the five base tokens flip; every derived rule follows -- */
+[data-theme="dark"] {
+  --brand:       #1ebde4;   /* logo cyan stays — high contrast on dark too */
+  --brand-deep:  #5dd4f0;   /* lighter cyan for text on dark bg            */
+  --brand-tint:  rgba(30, 189, 228, 0.14);
+  --ink:         #e6e8ec;   /* body text on dark                           */
+  --bg:          #16181c;
+
+  --ink-soft:    #a8adb5;
+  --muted:       #6e7480;
+  --surface:     #1e2126;
+  --border:      #2d3138;
+  --shadow:      rgba(0, 0, 0, 0.4);
 }
 
 * { box-sizing: border-box; }
@@ -80,7 +95,40 @@ body {
   margin: 0;
   color: var(--ink);
 }
-.wordmark .flourish { color: var(--teal-deep); font-style: italic; }
+.wordmark .flourish { color: var(--ink); font-style: italic; }
+
+/* --- masthead top row: brand on left, theme toggle on right --- */
+.masthead-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.theme-toggle {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink-soft);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.theme-toggle:hover {
+  color: var(--brand-deep);
+  border-color: var(--brand);
+  background: var(--brand-tint);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
 
 nav.ledger-nav {
   display: flex;

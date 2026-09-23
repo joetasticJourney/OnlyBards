@@ -8,15 +8,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
 </head>
 <body>
   <header class="masthead">
     <div class="masthead-inner">
-      <div class="masthead-brand">
-        <a href="index.html" class="masthead-logo-link">
-          <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
-        </a>
-        <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
       </div>
       <nav class="ledger-nav">
         <a href="index.html" class="">Ledger</a>
@@ -28,6 +47,27 @@
       </nav>
     </div>
   </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
   <main>
     
   <div class="eyebrow">Foes fought and yet to face</div>
