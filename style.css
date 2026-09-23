@@ -389,6 +389,16 @@ a.card-link:hover {
    are just the delete affordance for Notable Quotes and italic body for
    in-character quotes. */
 
+/* Kill entries: give each one the same brand-cyan left rule as the
+   Best Quotes speaker blocks on the session page, so kill boundaries
+   are obvious even when descriptions span multiple lines. Overrides the
+   default .dev-entry p padding-left so the rule sits flush. */
+.dev-kill {
+  border-left: 3px solid var(--brand-deep);
+  padding-left: 0.9rem !important;
+  margin: 0.35rem 0 0.55rem !important;
+}
+
 .dev-quote {
   display: flex; align-items: baseline; gap: 0.4rem;
   font-style: italic;
