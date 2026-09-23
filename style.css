@@ -1,6 +1,7 @@
 /* ============================================================
-   Chronicle — a campaign ledger
-   Palette: aged vellum, iron-gall ink, oxblood, verdigris, gilt
+   Only Bards — a campaign ledger themed around the band's logo
+   Palette: warm parchment, deep sea-teal (from the OB monogram),
+            copper accent, near-black ink
    Type: Fraunces (display, characterful serif) + Inter (data/body)
    Signature: ruled-ledger rows with a wax-seal status dot
    ============================================================ */
@@ -8,14 +9,19 @@
 :root {
   --vellum:      #ece3d0;
   --vellum-deep: #e0d4ba;
-  --ink:         #1f2233;   /* iron-gall near-black blue */
-  --ink-soft:    #454a63;
-  --oxblood:     #7d2b2b;
+  --ink:         #14263b;   /* dark navy-teal ink — plays well with logo cyan */
+  --ink-soft:    #3d4d63;
+  /* Primary brand accent, sampled from the OB logo. */
+  --teal:        #1c99b8;
+  --teal-deep:   #0f6a80;
+  /* --oxblood retained as the "warm accent" name so old rules still map to a
+     coherent colour; it's now a copper that reads well against teal. */
+  --oxblood:     #b25a3d;
   --verdigris:   #3a6b5f;
   --gilt:        #b58535;
   --rule:        #c8b98f;   /* ledger ruling lines */
   --paper-edge:  #d8cbac;
-  --shadow:      rgba(31, 34, 51, 0.12);
+  --shadow:      rgba(20, 38, 59, 0.14);
 }
 
 * { box-sizing: border-box; }
@@ -52,6 +58,18 @@ body {
 }
 .masthead-inner { max-width: 1080px; margin: 0 auto; }
 
+.masthead-brand {
+  display: flex; align-items: center; gap: 0.9rem;
+}
+.masthead-logo-link { line-height: 0; }
+.masthead-logo {
+  height: clamp(3rem, 6.5vw, 4.6rem);
+  width: auto;
+  display: block;
+  /* Small drop shadow to seat the transparent PNG against the parchment. */
+  filter: drop-shadow(0 1px 2px var(--shadow));
+}
+
 .wordmark {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;
@@ -60,14 +78,7 @@ body {
   margin: 0;
   color: var(--ink);
 }
-.wordmark .flourish { color: var(--oxblood); font-style: italic; }
-.campaign-name {
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: var(--ink-soft);
-  margin-top: 0.15rem;
-}
+.wordmark .flourish { color: var(--teal-deep); font-style: italic; }
 
 nav.ledger-nav {
   display: flex;
@@ -114,7 +125,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 2rem; }
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--oxblood);
+  color: var(--teal-deep);
   margin-bottom: 1.4rem;
 }
 
@@ -231,8 +242,8 @@ a.card-link {
   text-decoration: none;
 }
 a.card-link:hover {
-  background: rgba(181, 133, 53, 0.10);
-  border-top-color: var(--oxblood);
+  background: rgba(28, 153, 184, 0.08);   /* faint teal wash */
+  border-top-color: var(--teal-deep);
 }
 .card h3 {
   margin: 0 0 0.6rem;
@@ -243,7 +254,7 @@ a.card-link:hover {
   font-family: "Fraunces", serif;
   font-size: 2.6rem;
   line-height: 1;
-  color: var(--oxblood);
+  color: var(--teal-deep);
 }
 .big-stat small {
   display: block;
@@ -307,16 +318,16 @@ a.card-link:hover {
 }
 .renown-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--gilt, #b58935), var(--oxblood, #7a1f1f));
+  background: linear-gradient(90deg, var(--teal), var(--teal-deep));
   transition: width 0.3s ease;
 }
 .renown-val { font-family: "Fraunces", Georgia, serif; font-size: 1.1rem; color: var(--ink); white-space: nowrap; }
-.renown-val b { font-size: 1.4rem; color: var(--oxblood); }
+.renown-val b { font-size: 1.4rem; color: var(--teal-deep); }
 
 /* ---------- best quotes (session page) ---------- */
 
 .quotes-groups { display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 1.5rem; }
-.quote-group { border-left: 3px solid var(--oxblood, #7a1f1f); padding: 0.15rem 0 0.15rem 0.9rem; }
+.quote-group { border-left: 3px solid var(--teal-deep); padding: 0.15rem 0 0.15rem 0.9rem; }
 .quote-speaker { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.35rem; }
 .quote-list { list-style: none; padding: 0; margin: 0; }
 .quote-list li { font-family: "Fraunces", Georgia, serif; font-style: italic; line-height: 1.55; margin: 0.15rem 0; color: var(--ink, inherit); }
@@ -378,10 +389,10 @@ a.card-link:hover {
 }
 details[open] > .dev-heading::before {
   transform: rotate(90deg);
-  color: var(--oxblood);
+  color: var(--teal-deep);
 }
-details[open] > .dev-heading { color: var(--oxblood); }
-.dev-heading:hover { color: var(--oxblood); }
+details[open] > .dev-heading { color: var(--teal-deep); }
+.dev-heading:hover { color: var(--teal-deep); }
 .dev-entry {
   border-left: 2px solid var(--rule);
   padding: 0 0 0 0.75rem;
@@ -409,10 +420,10 @@ details[open] > .dev-heading { color: var(--oxblood); }
 }
 .dev-entry[open] summary::before {
   transform: rotate(90deg);
-  color: var(--oxblood);
+  color: var(--teal-deep);
 }
-.dev-entry[open] summary { color: var(--oxblood); }
-.dev-entry summary:hover { color: var(--oxblood); }
+.dev-entry[open] summary { color: var(--teal-deep); }
+.dev-entry summary:hover { color: var(--teal-deep); }
 .dev-entry p {
   font-size: 0.88rem;
   color: var(--ink-soft);
