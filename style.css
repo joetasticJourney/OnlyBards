@@ -95,7 +95,7 @@ body {
   margin: 0;
   color: var(--ink);
 }
-.wordmark .flourish { color: var(--ink); font-style: italic; }
+.wordmark .flourish { color: var(--brand); font-style: italic; }
 
 /* --- masthead top row: brand on left, theme toggle on right --- */
 .masthead-top {
