@@ -13,13 +13,13 @@
   --brand-deep:  #0f7a94;   /* darker cyan for text/links on light bg      */
   --brand-tint:  #dff1f6;   /* very pale cyan for hover fills on light bg  */
   --ink:         #1a1d21;   /* body text — near-black, slight warmth       */
-  --bg:          #e6e9ee;   /* page background — soft cool grey (calmer)   */
+  --bg:          #d9dde3;   /* page background — slate-tinged cool grey    */
 
   /* -- disciplined greys derived from the three (needed for hierarchy) -- */
   --ink-soft:    #4a5058;   /* secondary text                              */
   --muted:       #7a808a;   /* tertiary text, timestamps                   */
-  --surface:     #f5f7f9;   /* card/panel — slightly lighter than bg       */
-  --border:      #cfd5db;   /* light grey borders / ruling lines           */
+  --surface:     #ecf0f4;   /* card/panel — clearly lighter than bg        */
+  --border:      #bfc6cd;   /* borders / ruling lines — visible on new bg  */
   --shadow:      rgba(26, 29, 33, 0.08);
 
   /* -- legacy variable names kept so unmigrated rules still work -- */
