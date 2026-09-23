@@ -1,27 +1,37 @@
 /* ============================================================
-   Only Bards — a campaign ledger themed around the band's logo
-   Palette: warm parchment, deep sea-teal (from the OB monogram),
-            copper accent, near-black ink
+   Only Bards — three-colour palette
+   Brand:      #1EBDE4  (logo cyan)
+   Text:       near-black
+   Background: cool near-white
+   Everything else is a shade of those three (WCAG-safe pairings).
    Type: Fraunces (display, characterful serif) + Inter (data/body)
-   Signature: ruled-ledger rows with a wax-seal status dot
    ============================================================ */
 
 :root {
-  --vellum:      #ece3d0;
-  --vellum-deep: #e0d4ba;
-  --ink:         #14263b;   /* dark navy-teal ink — plays well with logo cyan */
-  --ink-soft:    #3d4d63;
-  /* Primary brand accent, sampled from the OB logo. */
-  --teal:        #1c99b8;
-  --teal-deep:   #0f6a80;
-  /* --oxblood retained as the "warm accent" name so old rules still map to a
-     coherent colour; it's now a copper that reads well against teal. */
-  --oxblood:     #b25a3d;
-  --verdigris:   #3a6b5f;
-  --gilt:        #b58535;
-  --rule:        #c8b98f;   /* ledger ruling lines */
-  --paper-edge:  #d8cbac;
-  --shadow:      rgba(20, 38, 59, 0.14);
+  /* -- the three -- */
+  --brand:       #1ebde4;   /* logo cyan — accents, active states, borders */
+  --brand-deep:  #0f7a94;   /* WCAG-AA cyan on --bg (4.7:1) for text/links   */
+  --brand-tint:  #e4f6fb;   /* very pale cyan for hover fills / subtle panels */
+  --ink:         #1a1d21;   /* body text — near-black, slight warmth         */
+  --bg:          #f6f8fa;   /* page background — cool near-white              */
+
+  /* -- disciplined greys derived from the three (needed for hierarchy) -- */
+  --ink-soft:    #4a5058;   /* secondary text                                */
+  --muted:       #7a808a;   /* tertiary text, timestamps                     */
+  --surface:     #ffffff;   /* card/panel — actual white so it lifts off bg  */
+  --border:      #e1e6ea;   /* light grey borders / ruling lines             */
+  --shadow:      rgba(26, 29, 33, 0.08);
+
+  /* -- legacy variable names kept so unmigrated rules still work -- */
+  --vellum:      var(--bg);
+  --vellum-deep: var(--bg);
+  --rule:        var(--border);
+  --paper-edge:  var(--border);
+  --teal:        var(--brand);
+  --teal-deep:   var(--brand-deep);
+  --gilt:        var(--brand-deep);   /* was warm gold; now brand-deep for the same visual role */
+  --verdigris:   var(--brand);        /* was mossy green; now brand cyan for "positive" seals   */
+  --oxblood:     var(--ink);          /* was copper/red; now ink for "closed/dead" states       */
 }
 
 * { box-sizing: border-box; }
@@ -30,15 +40,7 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 37px,
-      rgba(120, 100, 60, 0.07) 37px,
-      rgba(120, 100, 60, 0.07) 38px
-    ),
-    var(--vellum);
+  background: var(--bg);
   color: var(--ink);
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   font-size: 16px;
@@ -52,8 +54,8 @@ body {
 /* ---------- masthead ---------- */
 
 .masthead {
-  border-bottom: 3px double var(--ink);
-  background: linear-gradient(var(--vellum-deep), var(--vellum));
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
   padding: 1.4rem 2rem 1rem;
 }
 .masthead-inner { max-width: 1080px; margin: 0 auto; }
@@ -143,7 +145,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 2rem; }
   text-decoration: none;
   color: inherit;
 }
-a.entry:hover { background: rgba(181, 133, 53, 0.08); }
+a.entry:hover { background: var(--brand-tint); }
 
 .seal {
   width: 14px; height: 14px;
@@ -220,7 +222,7 @@ a.entry:hover { background: rgba(181, 133, 53, 0.08); }
   padding: 4px 12px;
   cursor: pointer;
 }
-.cull-btn:hover { color: var(--oxblood); border-color: var(--oxblood); background: rgba(125, 43, 43, 0.06); }
+.cull-btn:hover { color: var(--ink); border-color: var(--ink); background: rgba(26, 29, 33, 0.04); }
 
 /* ---------- dashboard cards ---------- */
 
@@ -278,8 +280,8 @@ a.card-link:hover {
 .talkbar-name { font-weight: 600; font-size: 0.92rem; }
 .talkbar-track {
   height: 20px;
-  background: rgba(31,34,51,0.06);
-  border: 1px solid var(--rule);
+  background: rgba(26, 29, 33, 0.05);
+  border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
 }
@@ -287,8 +289,8 @@ a.card-link:hover {
   display: block;
   height: 100%;
   background: repeating-linear-gradient(
-    45deg, var(--verdigris), var(--verdigris) 6px,
-    #34605540 6px, #34605540 12px);
+    45deg, var(--brand), var(--brand) 6px,
+    rgba(30, 189, 228, 0.35) 6px, rgba(30, 189, 228, 0.35) 12px);
 }
 .talkbar-val {
   text-align: right;
@@ -594,7 +596,7 @@ a.plain { color: var(--verdigris); }
   justify-content: center;
   border-style: dashed;
   border-color: var(--rule);
-  background: rgba(31, 34, 51, 0.03);
+  background: rgba(26, 29, 33, 0.02);
   color: var(--ink-soft);
   font-family: "Fraunces", serif;
   font-size: 1.8rem;
@@ -618,11 +620,11 @@ a.plain { color: var(--verdigris); }
   opacity: 0;
   pointer-events: none;
 }
-.portrait-wrap:hover .portrait { border-color: var(--gilt); }
+.portrait-wrap:hover .portrait { border-color: var(--brand); }
 .portrait-wrap:hover .portrait-empty {
-  border-color: var(--gilt);
-  color: var(--gilt);
-  background: rgba(181, 133, 53, 0.08);
+  border-color: var(--brand);
+  color: var(--brand-deep);
+  background: var(--brand-tint);
 }
 .portrait {
   width: 64px;
