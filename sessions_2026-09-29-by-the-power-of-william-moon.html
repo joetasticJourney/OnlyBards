@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 3: By the Power of William Moon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 3: By the Power of William Moon
+    
+    <a class="transcript-link" href="sessions_2026-09-29-by-the-power-of-william-moon_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>The session picks up halfway through the William Moon barrow, cult reinforcements pressing the party from the far door and Kaldur still wedged in the choke point. Before the next wave crashes in, time freezes for Rico. William Moon himself steps into the tableau, calls Rico his &#34;paladin of lunanescent suffocation,&#34; and offers a mechanic to the whole band: any bandmate who raises a weapon and shouts &#34;By the power of William Moon, I possess the wherewithal!&#34; will instantly level up. Rico takes it. Kaldur, Enjee, and Roadie flatly refuse. Dreadie holds out for a while before shouting his own version — &#34;Ground Control to William Moon, will you reach out and help me soon?&#34; — and gets his level. The rest of the band stays a level behind on principle.</p>
+    
+      
+      <p>The second wave is Cult of Ragnarok plus a Gillitrut Troll — a barking troll-dog whose regeneration only stops from fire. Enjee identifies it instantly and starts putting Sorcerous Bursts through it while Kaldur holds the doorway, Roadie drops a fog cloud, and the party fights blind (except Kaldur, who has tremorsense and starts landing every swing). Rico gets mauled by the troll dog to a fugue state — &#34;floating in moonlight with multiple William Moons singing in a choir&#34; — before Roadie potions him back up. Party wipes the wave. The troll skin gets harvested for Dreadie to craft into a potion of longevity later.</p>
+    
+      
+      <p>Through the next door: another cult cell, led by boar-scarred Bolgrim Borskar. A chittering squirrel-man on Bolgrim&#39;s side steps up and openly mocks the leader for the scars — turns out to be Kostov, a Ratatouille moon knight from the World Tree, come to help. Between Dreadie&#39;s heat-metal on Bolgrim&#39;s sword, Scales&#39; spear through a cultist&#39;s heart, and Enjee&#39;s drumstick-focused Sorcerous Bursts, the cell dies. Finulf hands the shears to Roadie. Kostov docks Sig&#39;s Swig in Port Last and books the band a future gig there. The band decides they will not hand the shears to anyone — Roadie&#39;s plan from last session stands.</p>
+    
+      
+      <p>Back in East Haven at the Big Fat Knucklehead, Barbara Bush the low-bearded dwarven barmaid takes their order and closes with Scales at 11 pm. A cloaked courier slides a stone cylinder to Enjee — coordinates for Argent Hall, an old moon-place in the Spine of the World, wrested from the Duergar generations back. Kaldur immediately recognizes the site. Meanwhile Kaldur takes an astral phone call from his cousin Astro — son of the Proxy of Klangadin, hero-of-a-realm — patched in via a bloodstone rune. Astro rambles about a family reunion in the Desert Valley for the better part of an hour. Kaldur, respectfully outranked, lets him.</p>
+    
+      
+      <p>William Moon shows up in person at the inn to work on Dreadie. Reveals the gay-stuff prohibition was a mistranslation, rewrites Rico&#39;s pamphlets in real time to say so, and when pressed on his true nature drops that he &#34;once banged a horse&#34; before vanishing through a wall. Dreadie is not buying it. His read after the encounter: &#34;Pretty sure he&#39;s Loki.&#34; His strategy: dismantle the establishment from the inside. Meanwhile Rico reads the entire book of Moon-nite tenets aloud to Enjee while Enjee &#34;sleeps&#34; upright in a chair with his eyes wide open — leaving Enjee, in the morning, involuntarily knowing every tenet.</p>
+    
+      
+      <p>Noon gig at the Wet Trout. Scales opens hammered on Aurel&#39;s Tears with pussy-breath sax and craters the meter; Enjee kicks it back up on drums; Rico plays basic chords over Scales&#39; discordant mess and, on a nat-20, harmonizes with it. Roadie starts hallucinating undead hooligans in Adidas tracksuits charging the stage, reverse-stage-dives through a wall trying to tackle one, and bloodies his nose on empty air. Scales somehow closes with a critical tenor-sax note that sings like a clarinet. The gig ends in a standing ovation. Band name goes public for the first time — Rico shouts &#34;Chaos Wolf,&#34; spelled Q-H-A-O-S V-U-L-F.</p>
+    
+      
+      <p>Mid-gig Kaldur clocks a man dragging an unconscious woman out through a window into the killing cold. He and Roadie break through in pursuit; the man escapes. The woman, Samantha, has a cold-shaped scar and thanks Kaldur with a secret Cespilar blackberry-wine recipe from her diluted elven bloodline. The attacker is rumored as the &#34;Cold-handed Man,&#34; name Sifos Cifik — sacrificing people to a cold entity in the old Aurel style. The party boards the East Haven ferry to hunt for Bot Withers on the northeastern shore. Kaldur immediately spots a shrunk-hole in the hull sized for a Mind-Master Duergar. Session out.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Scales</div>
+        <ul class="quote-list">
+          <li>&ldquo;I need a drink. Your strongest.&rdquo;</li><li>&ldquo;Only the most vile villains wear Adidas.&rdquo;</li><li>&ldquo;Kinsman, we share troubles.&rdquo;</li><li>&ldquo;I have seen this before.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;By the power of William Moon, I possess the wherewithal.&rdquo;</li><li>&ldquo;It&#39;s just the first step, man. It just gives you a taste.&rdquo;</li><li>&ldquo;That&#39;s William Moon, bitch.&rdquo;</li><li>&ldquo;Yeah, so quit it with all the cults and join a real religion.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;By the power of the Borodin Sarmine, I&#39;m not fucking saying that.&rdquo;</li><li>&ldquo;Don&#39;t put me in a situation where I have to kill Rico.&rdquo;</li><li>&ldquo;You got one fucking pound-ass or whatever and don&#39;t bother me none — you do what you want.&rdquo;</li><li>&ldquo;The Gravelguts are famous for our wisdom.&rdquo;</li><li>&ldquo;Two twos is three twos. So 222 is all.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Ground Control to William Moon — will you reach out and help me soon?&rdquo;</li><li>&ldquo;It&#39;s much easier to dismantle an establishment from the inside.&rdquo;</li><li>&ldquo;If you want Dreadie Mercurie&#39;s cooperation, I think you&#39;re going to have to be absolutely honest with Dreadie Mercurie.&rdquo;</li><li>&ldquo;Pretty sure he&#39;s Loki.&rdquo;</li><li>&ldquo;You know, flattery will get you halfway there. The truth will get you the whole way.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;d like to make it clear I&#39;m not using death.&rdquo;</li><li>&ldquo;I&#39;m going to take my four hours of sleep while he&#39;s doing that. My eyes don&#39;t close or open, so you can&#39;t really tell if I&#39;m sleeping or not.&rdquo;</li><li>&ldquo;Hey, temporary bandmates — some weird creepy guy in a cape came up and just put this on a table in front of me.&rdquo;</li><li>&ldquo;I don&#39;t really drink, you dig? Just put it up in there so I look like I&#39;m drinking.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;It starts so small with like believing in a divine power, and then it always ends with lighting people on fire on stage.&rdquo;</li><li>&ldquo;Once you open the door to William Moon, you can&#39;t really close it.&rdquo;</li><li>&ldquo;If anyone doesn&#39;t want to get pregnant, please leave the room now.&rdquo;</li><li>&ldquo;I mean, I think you&#39;ve learned your lesson about running with cults, right?&rdquo;</li><li>&ldquo;I could give him one trip of the drug pocket. Maybe he&#39;d turn his life around.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;By the power of William Moon, I possess the wherewithal.&rdquo;</li><li>&ldquo;I am William goddamn Moon, motherfucker.&rdquo;</li><li>&ldquo;Rise, my son. You&#39;ve been channeling my power with might and glory, my moon knight, my paladin of lunanescent suffocation.&rdquo;</li><li>&ldquo;The moon has three phases.&rdquo;</li><li>&ldquo;Once you pop the moon, don&#39;t stop.&rdquo;</li><li>&ldquo;I did once bang a horse.&rdquo;</li><li>&ldquo;I promise I&#39;ll fix your teeth.&rdquo;</li><li>&ldquo;The weave of fate has decided that your band is going to be at the crux of survival or destruction.&rdquo;</li><li>&ldquo;There is no need for you all to die for the actions of Finulf.&rdquo;</li><li>&ldquo;You&#39;re a fucking pig!&rdquo;</li><li>&ldquo;Icewind Dale was once a seat of great power, and we have felt its loss acutely.&rdquo;</li><li>&ldquo;You detect traces of undead — specifically, footprints of Adidas shoes.&rdquo;</li><li>&ldquo;So lube, you find on him as he falls.&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">7</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 19.8%"></span>
+      </span>
+      <span class="talkbar-val">154m 57s · 20%</span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 19.1%"></span>
+      </span>
+      <span class="talkbar-val">149m 25s · 19%</span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 14.3%"></span>
+      </span>
+      <span class="talkbar-val">112m 15s · 14%</span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 14.1%"></span>
+      </span>
+      <span class="talkbar-val">110m 47s · 14%</span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 14.1%"></span>
+      </span>
+      <span class="talkbar-val">110m 43s · 14%</span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 11.5%"></span>
+      </span>
+      <span class="talkbar-val">89m 58s · 11%</span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">bad token</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 7.1%"></span>
+      </span>
+      <span class="talkbar-val">55m 42s · 7%</span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Rico Lunae</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Kaldur Gravelgut</span></span>
+      <span class="entry-meta tally"><b>2</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Enjee</span></span>
+      <span class="entry-meta tally"><b>3</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Scales</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    
+    <div class="entry"><span class="seal failed"></span>
+      <span><span class="entry-title" style="font-size:1rem">Rico Lunae</span></span>
+      <span class="entry-meta tally"><b>1</b> knocked unconscious</span></div>
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 2 session(s) chronicled
+     · last updated 2026-09-29T08:13:38Z
+  </footer>
+</body>
+</html>
