@@ -320,18 +320,19 @@ a.card-link:hover {
 
 .talkbar-row {
   display: grid;
-  grid-template-columns: 130px 1fr 96px;
+  grid-template-columns: 120px 1fr 100px;
   align-items: center;
-  gap: 0.8rem;
+  column-gap: 0.5rem;
   padding: 0.4rem 0;
 }
 .talkbar-name { font-weight: 600; font-size: 0.92rem; }
 .talkbar-track {
-  height: 20px;
+  height: 22px;
   background: rgba(26, 29, 33, 0.05);
   border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
+  min-width: 0;
 }
 .talkbar-fill {
   display: block;
@@ -340,12 +341,30 @@ a.card-link:hover {
     45deg, var(--brand), var(--brand) 6px,
     rgba(30, 189, 228, 0.35) 6px, rgba(30, 189, 228, 0.35) 12px);
 }
+.talkbar-pct {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.9), 0 0 2px rgba(255, 255, 255, 0.9);
+  line-height: 1;
+  pointer-events: none;
+}
 .talkbar-val {
   text-align: right;
   font-variant-numeric: tabular-nums;
   font-size: 0.84rem;
   color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
 }
+.talkbar-val-words { font-size: 0.76rem; opacity: 0.75; }
 
 /* ---------- narrative prose ---------- */
 

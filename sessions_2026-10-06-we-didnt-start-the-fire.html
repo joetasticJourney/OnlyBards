@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 4: We Didn&#39;t Start the Fire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 4: We Didn&#39;t Start the Fire
+    
+    <a class="transcript-link" href="sessions_2026-10-06-we-didnt-start-the-fire_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>The session opens below decks on the East Haven ferry, where the &#34;normal wear&#34; Kaldur chopped at last session finally produces its tenant: a Mind-Master Duergar. Dreadie misfires an older-edition Thunderwave that doesn&#39;t push but blows a foot-wide hole in the hull, flooding the deck. The Duergar — small enough to climb through — stabs Dreadie in the crotch, splitting his dick clean in twain, and uses mind-mastery to make Rico take a 13-damage swing at Scales. Scales answers with a Bloodborne-flavored Steinhardt teleport-slash, Kaldur chops the Duergar in half, and Roadie wedges leather armor into the hole and mends the boat shut while standing up to his belly button in freezing lake water. The ferry survives. It also doesn&#39;t sail today. Scython the drunk ferryman buys the &#34;Duergar did it, not us&#34; cover story.</p>
+    
+      
+      <p>Rocket sleds up the northwestern coast. Rico, driving, Looney-Tunes face-plants the party into a snowdrift, but Scales nails his landing like a pro drifter. They find Bot Withers&#39; keelboat frozen offshore and his body thawed by wolves — with a six-pointed snowflake carved into his forehead. Rico&#39;s religion check lands it: this is a sign to Cryonax, not Aurel. The cold entity in Icewind Dale got a rebrand nobody told the party about. Roadie strings Bot up by the armpits into the rigging to protect him from the wolves on the way back.</p>
+    
+      
+      <p>Keen elf eyes spot a tower nearby holding a bound-and-gagged tiefling. Rico shoulder-rolls through the window with his greatsword — &#34;like a white-trash kid with a knife from the gas station&#34; — and unties her. She&#39;s Felith, a Children of Splintered Ice spy, and the &#34;cultists upstairs&#34; line is bait. Felith buries a dagger in Rico&#39;s back; he nearly bleeds out, Dreadie saves him with Cure Wounds, Roadie quadruple-grapples and chain-locks Felith and her partner, Rico puts a Moon-Bolt crossbow shot through her face, and the last cultist tries to leap off the fourth story. Scales catches him alive and delivers a flaying monologue so grim — &#34;we will remove your tendons and play them with our lead guitarist&#39;s guitar&#34; — that the cultist starts praying to die. He gets his wish. On the way out, Kaldur finds a hit list signed by &#34;Ice Knife&#34; — the Wet Trout owner, Nemitra.</p>
+    
+      
+      <p>Back in East Haven, Captain Argiloth arrests Nemitra on sight. Kaldur declares himself part-owner of the Wet Trout by &#34;foredeck&#34; and spends the afternoon acting-barkeep. Roadie slips a packet of gorilla-panic — now confirmed basically PCP — into Rico&#39;s moonshine. Rico sees the whole band as gorillas trying to rape him, pulls his greatsword in the bar, and has to be grappled by Kaldur and mind-whipped unconscious by Enjee, then dumped in the warm outhouse. Meanwhile Dreadie beds a half-orc barmaid named Natty, writes a song called &#34;Fat Bottom Orcs&#34; in the kitchen between rounds, and gets snatched mid-trout-pie by William Moon into a private room — &#34;my two disciples.&#34; Dreadie refuses discipleship a second time and leaps out the window.</p>
+    
+      
+      <p>Morning of Burning Man gig. Captain Argiloth walks the band through East Haven prison. Introduce William O. Cosby — a Lathander-blues prisoner who presses juice &#34;made up right here in the toilet&#34; on his visitors, ten vials of dry poison on his sheet in flavors (grape, tutti-frutti, pudding). Dzan the Red Wizard, scheduled to burn in four hours, offers everything in exchange for freedom; Rico tries to convert him to William Moon and nearly springs him before Enjee shuts it down. Dzan still gives up the real intel: the Chaos Wolf is still bound by Gleipnir, Uror&#39;s Shears is the only tool that can cut it, Skaldholm (west of the Purple Rocks) holds the deepest Fenrir lore, and his simulacrum is in the tundra guarded by a wight — recover it and his lair below the Lucky Liar in Lonelywood opens. Roadie ketamines him so the burning will be bearable. Dreadie persuades Argiloth to make it a double burning and throw Cosby on the second pyre.</p>
+    
+      
+      <p>200-person crowd — biggest show the band has played. Enjee locks in four-on-the-floor, Kaldur&#39;s bass holds the pocket, Natty climbs on stage mid-set and straddles a cannon &#34;like Cher on the Battleship&#34; while Scales lights her up with pink-and-violet Faerie Fire, Dreadie debuts Fat Bottom Orcs, Rico shapes a crescent moon with Dancing Lights, and Cosby&#39;s charisma-13 screams actually harmonize. Then Roadie, triggered by the smell of burning flesh, collapses behind cover and accepts a guitar pick from one of last session&#39;s hallucinated-but-actually-undead Adidas-hooligans. His frosted tips grow back into dreadlocks, he transforms into a different man entirely, and he shreds a two-minute solo nobody can locate. He drops the pick, reverts. Band crits the performance. Both prisoners burn to a crisp in harmony.</p>
+    
+      
+      <p>Roadie, hollowed out afterward, confesses the backstory he&#39;s been running from: he used to play rhythm in Lich Brisket, a Limp-Bizkit-styled band fronted by a lich called Dreadwurst that burned the &#34;non-nookie compliant&#34; crowd alive at Bloodstock &#39;99. Roadie quit, Dreadwurst is still angry about it, and the pick-of-the-undead-hooligans is a leash. His stated plan: &#34;I got some shears. I&#39;ll cut his fucking head off.&#34; Havel the agent cheerfully announces gigs pouring in across the Ten Towns — the Uphill Climb, Northern Light, Hook Line and Sinker, Luskan Arms in Targos, the Five Tavern Center fight pits in Bremen, the Blue Clam in Termalane once the gem-mine trouble clears (Kaldur&#39;s Dumathoin lead, right on his route). Dugan&#39;s Hole has been overrun by cultists; locals have crossed out the &#34;Hole&#34; on the roadsigns and written &#34;Hell.&#34; Rico vows to put the Hole back in Hell. East Haven, as Havel puts it, is now cream-pied.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Scales</div>
+        <ul class="quote-list">
+          <li>&ldquo;We will not fall into the frost and you will not die quickly. We will flay you from foot to head. We will look out your eyes. We will remove your tendons and play them with our lead guitarists&#39; guitar.&rdquo;</li><li>&ldquo;It will not be fast, it will not be quick, it will not be pretty, and you will be alive for all of it.&rdquo;</li><li>&ldquo;You cannot lie.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;I don&#39;t think these guys know about boat law.&rdquo;</li><li>&ldquo;You&#39;ll never take me alive, fuckers. Die, gorillas!&rdquo;</li><li>&ldquo;Suck moon, bitch!&rdquo;</li><li>&ldquo;I think I took a lot of the gorillas out before I went down.&rdquo;</li><li>&ldquo;Mr. Dazon, have you heard the good news about William Moon?&rdquo;</li><li>&ldquo;I land on my feet, at least.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;Rico, you&#39;re not allowed to drive a fucking sled anymore.&rdquo;</li><li>&ldquo;We are weirdly more tolerant of half-orcs than other people — because of Pavel. They&#39;re the good ones. Some of them are the good ones.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;That son of a bitch stole my likeness.&rdquo;</li><li>&ldquo;I must insist that we go to Kerr Koenig as well.&rdquo;</li><li>&ldquo;That is precisely who I had in mind.&rdquo;</li><li>&ldquo;Dreadie Mercurie isn&#39;t going to suit up until he&#39;s had some wine.&rdquo;</li><li>&ldquo;You might want to calm down with your intolerance there a little bit, champ.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;I don&#39;t know, man. It&#39;s one of these fucking streaky-ass fucking rolls. I really need to fucking fire my agent.&rdquo;</li><li>&ldquo;Somebody just got stabbed in the dick.&rdquo;</li><li>&ldquo;This is your fault, you know that, right?&rdquo;</li><li>&ldquo;We want a small barbecue.&rdquo;</li><li>&ldquo;You&#39;re sick, fuck, you know that?&rdquo;</li><li>&ldquo;Listen, man — why don&#39;t you go to the room, lay down and go to sleep.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;I got a pocket for ups, I got a pocket for downs, I got a pocket for crazy, crazy strength.&rdquo;</li><li>&ldquo;Sometimes, when your talent is so great, the only way to truly break through to the next level is with — well — some drug enhancements. That can sometimes go awry.&rdquo;</li><li>&ldquo;This has to be a memorable show for everyone trying to make a name for ourselves.&rdquo;</li><li>&ldquo;There was an incident at Bloodstock. They were considered non-nookie compliant, I don&#39;t know. It wasn&#39;t deep.&rdquo;</li><li>&ldquo;I got some shears. I&#39;ll cut his fucking head off.&rdquo;</li><li>&ldquo;He&#39;s a red wizard. He was already going to be burned alive. I mean, it&#39;s these people&#39;s arcane ritual.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;If you steal the boat you&#39;re going to fucking prison. And you&#39;ll be the one on Burning Man. Burning Man will be three times longer.&rdquo;</li><li>&ldquo;Natty! Put your fucking skirt back down and get your goddamn trout pies ready!&rdquo;</li><li>&ldquo;Three drinks to you, bucko — because you fucking arrested my boss, and now I&#39;m the boss.&rdquo;</li><li>&ldquo;The Chaos Wolf once was bound by Gleipnir. I assume it still is. In order to cut that, they would need something capable of cutting anything.&rdquo;</li><li>&ldquo;I have a simulacrum. I sent it out into the frozen wilds with him — in hopes that part of me would still survive.&rdquo;</li><li>&ldquo;The Lucky Liar in Lonelywood. Below that is my lair.&rdquo;</li><li>&ldquo;Oh God, I&#39;m just enjoying this delicious juice I made up right here in the toilet.&rdquo;</li><li>&ldquo;Rise, my son — you&#39;ve been channeling my power with might and glory. My moon knight, my paladin — prioritization is next to godliness, as William Moon hath taught, just now.&rdquo;</li><li>&ldquo;You know that moon elves have a lacking enzyme that helps them break down gorilla panic.&rdquo;</li><li>&ldquo;If I die, I am to the Frostfell, where my essence will be preserved.&rdquo;</li><li>&ldquo;He somehow made horchata in his cell. It smelled delicious. Like, any drink I would have turned down from him — except horchata.&rdquo;</li><li>&ldquo;Nobody knows the trouble I see. Nobody knows Lathander.&rdquo;</li><li>&ldquo;East Haven has been cream-pied. Moving on.&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">7</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 47.3%"></span>
+        <span class="talkbar-pct">47%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">100m 45s</span>
+        <span class="talkbar-val-words">12,338 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 16.3%"></span>
+        <span class="talkbar-pct">16%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">34m 40s</span>
+        <span class="talkbar-val-words">3,757 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 15.3%"></span>
+        <span class="talkbar-pct">15%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">32m 32s</span>
+        <span class="talkbar-val-words">5,300 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 8.0%"></span>
+        <span class="talkbar-pct">8%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">16m 58s</span>
+        <span class="talkbar-val-words">1,727 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 6.0%"></span>
+        <span class="talkbar-pct">6%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">12m 51s</span>
+        <span class="talkbar-val-words">1,641 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 4.2%"></span>
+        <span class="talkbar-pct">4%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">8m 54s</span>
+        <span class="talkbar-val-words">1,130 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">bad token</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 3.0%"></span>
+        <span class="talkbar-pct">3%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">6m 22s</span>
+        <span class="talkbar-val-words">657 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Scales</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Rico Lunae</span></span>
+      <span class="entry-meta tally"><b>2</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Kaldur Gravelgut</span></span>
+      <span class="entry-meta tally"><b>2</b> kills</span></div>
+    
+    
+    <div class="entry"><span class="seal failed"></span>
+      <span><span class="entry-title" style="font-size:1rem">Rico Lunae</span></span>
+      <span class="entry-meta tally"><b>1</b> knocked unconscious</span></div>
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 3 session(s) chronicled
+     · last updated 2026-10-06T10:56:36Z
+  </footer>
+</body>
+</html>

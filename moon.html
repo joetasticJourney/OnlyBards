@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Moon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="active">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow">The Latter-Day Selunites</div>
+
+  
+    <h1 class="section-head">The Latter-Day Selunites</h1>
+    
+      <p><em>Also known as:</em> Men of Moonlight · Moonanites · Chaos Wolf (the public band name)</p>
+    
+
+    
+      <h2 class="section-head">Tenets <span class="count">9</span></h2>
+      <div class="ledger">
+        
+        
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Tenet #7 — "It depends."
+            </span>
+            <span class="entry-body">Rico&#39;s catch-all answer to any theological edge case; later confirmed by William Moon in the stream chat as literally Tenet #7.</span>
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Tenet #8 — "Don&#39;t be gay.* (*actually gay stuff is fine)"
+            </span>
+            <span class="entry-body">The asterisk and fine-print were added by William Moon in real time during session 3, after Dreadie and Roadie pushed Rico to clarify. The pamphlet now reads with the asterisk as if it had always been there.</span>
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Tenet #41 — "No means yes to William Moon."
+            </span>
+            <span class="entry-body">Flagged by the DM in session 3 as the highest-numbered confirmed tenet so far; implies there are at least 41 total.</span>
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Tenet #73 — "Prioritize. (Prioritization is next to godliness — as William Moon hath taught, just now.)"
+            </span>
+            <span class="entry-body">Delivered to a blackout-drunk, PCP-tripping Rico in session 4 inside the Wet Trout outhouse, after Rico tried to defend keeping half the party un-smitten. William Moon added it to the pamphlet on the spot; Rico confirmed its number (&#39;then it&#39;s 70, 73 prioritized&#39;) and asked that the first P be capitalized and that the tittle of the I be replaced with a little heart.</span>
+          </span>
+          <span class="entry-meta">
+            Session 4: We Didn&#39;t Start the Fire
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Unnumbered — "Always be badass."
+            </span>
+            
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Unnumbered — "Protect the weak."
+            </span>
+            
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Unnumbered — "Smite the evil."
+            </span>
+            
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Unnumbered — "Spread the seed."
+            </span>
+            <span class="entry-body">The tenet Rico cites to justify his groupie-fueled lifestyle. Collected in session 3 at the Big Fat Knucklehead with Barbara Bush, extended in session 4 when he vanished into the VIP room with Cassandra after the Wet Trout gig.</span>
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+        <div class="entry">
+          <span class="seal active"></span>
+          <span>
+            <span class="entry-title">
+              Unnumbered — "Never question the teachings of William Moon."
+            </span>
+            <span class="entry-body">Invoked whenever a bandmate pokes a hole in the doctrine. The DM called it out as a tenet mid-session 3.</span>
+          </span>
+          <span class="entry-meta">
+            Session 3: By the Power of William Moon
+          </span>
+        </div>
+        
+      </div>
+    
+
+    
+      <h2 class="section-head">Overview</h2>
+      <div class="ledger">
+        <div class="entry">
+          <span class="seal active"></span>
+          <span><span class="entry-body">Rico Lunae&#39;s cradle religion, carried into the band through his lead-guitarist&#39;s zealotry and now exported, one awkward conversation at a time, to anyone the band meets. Rico&#39;s own line: &#39;Have you heard the good news about William Moon?&#39; The faith venerates Selûne as the one true god and William Moon as her chosen moon-knight / messenger — Rico insists he is &#39;chosen by Selûne to represent her.&#39; Rico calls initiates &#39;Moonanites&#39; and tried to brand the band &#39;Men of Moonlight&#39; before Chaos Wolf (spelled Q-H-A-O-S V-U-L-F) stuck as the public name. As of session 3, William Moon canonized the band-wide activation phrase &#39;By the power of William Moon, I possess the wherewithal!&#39; — raise a weapon, shout it, level up on the spot. Rico and Dreadie have both cashed it; Scales, Kaldur, Enjee, and Roadie have all firmly refused.</span></span>
+        </div>
+      </div>
+    
+
+    
+      <h2 class="section-head">Cosmology</h2>
+      <div class="ledger">
+        <div class="entry">
+          <span class="seal active"></span>
+          <span><span class="entry-body">Rico has gaslit the party, with DM-rewarded success, into believing a specific syncretic cosmology: Odin was William Moon in disguise. The plane of Isgard contains both Asgard (the Norse realm) and Argenteel (Selûne&#39;s domain) as sibling realms. Selûne is the one true god; William Moon is her moon-knight / chosen representative, operating out of the World Tree. Kostov the Ratatouille moon-knight claims to be from the World Tree and to have &#39;walked its bowels,&#39; and is openly a fellow disciple of William Moon — introduced in session 3. &#39;The moon has three phases&#39; is a repeated William Moon catechism (contested by Kaldur, who notes correctly that it has four). The Norns and Ginnungagap are also canon in this cosmology — Uror&#39;s Shears belong to Urðr, and the William Moon barrow preserves the giant-slayer story of the three demons who cut up Orgelmir to build the world.</span></span>
+        </div>
+      </div>
+    
+
+    
+      <h2 class="section-head">William Moon</h2>
+      <div class="ledger">
+        <div class="entry has-portrait">
+          <span class="seal active"></span>
+          
+  <span class="portrait-placeholder" aria-hidden="true"></span>
+          <span><span class="entry-body">Appears as a man-shaped figure with a shadow that casts horns — Dreadie&#39;s running theory is that he is Loki. Rewrites his own tenets in real time (session 3: Rico asked him to clarify Tenet #8, &#39;don&#39;t be gay,&#39; and William Moon added an asterisk clarifying that &#39;gay stuff is fine, actually&#39;). Freezes time to deliver personal cutscenes (session 3: elevated Rico to &#39;my moon knight, my paladin of lunanescent suffocation&#39;). Appears to Dreadie in multiple forms — a fisherman by a docked ship, a big-titted woman flashing the Wet Trout crowd, and in-person for private arguments. Has personally confirmed: &#39;I did once bang a horse&#39; (session 3); &#39;I promise I&#39;ll fix your teeth&#39; to Dreadie; and &#39;the weave of fate has decided that your band is going to be at the crux of survival or destruction.&#39; In session 4 he teleport-abducted Dreadie out of a Wet Trout outhouse into a private room to proclaim Rico and Dreadie &#39;my two disciples&#39;; Dreadie refused and jumped out the window. In Rico&#39;s blackout-drug dream at the same inn, he reaffirmed Rico as &#39;the moon sign&#39; (because the name &#39;Rico&#39; means &#39;the chosen one&#39;), invented the Tenet of Prioritization on the spot, and warned Rico that &#39;moon elves have a lacking enzyme that helps them break down gorilla panic.&#39; Dreadie&#39;s working diagnosis after all of it: &#39;Pretty sure he&#39;s Loki.&#39;</span></span>
+        </div>
+      </div>
+    
+
+    
+      <h2 class="section-head">The Tablets</h2>
+      <div class="ledger">
+        <div class="entry has-portrait">
+          <span class="seal active"></span>
+          
+  <span class="portrait-placeholder" aria-hidden="true"></span>
+          <span><span class="entry-body">The religion&#39;s scripture is called the Tablets of William Moon — Rico has never actually seen the original tablets. What he carries is his dad&#39;s translation, printed as a pamphlet called the Book of Moon-nites. The pamphlet has at least 41 numbered tenets plus unnumbered maxims; Rico hands them out as evangelism aids and sometimes consults them mid-conversation to argue a point. Enjee involuntarily memorized the entire 41+ tenets in session 3 by sleeping upright next to Rico in the &#39;cuck chair&#39; for four hours while Rico read the whole thing aloud to what he believed was a sleeping Enjee — Enjee&#39;s purple gelatinous eyes don&#39;t close, so Rico never knew. The pamphlet rewrites itself in real time when William Moon personally edits a tenet (session 3: Rico watched new asterisked fine-print appear mid-conversation about Tenet #8).</span></span>
+        </div>
+      </div>
+    
+
+    
+      <h2 class="section-head">The Flock</h2>
+      <div class="ledger">
+        <div class="entry">
+          <span class="seal active"></span>
+          <span><span class="entry-body">Among the band: Rico Lunae is fully converted and now operates as William Moon&#39;s paladin of lunanescent suffocation, with the party-wide &#39;By the power of William Moon&#39; level-up ladder as his new recruitment tool. Dreadie Mercurie took the bait once (leveled up during the barrow fight) and has since treated the whole William Moon phenomenon as an infiltration op — refuses discipleship, believes he is Loki, has survived two personal William Moon audiences (session 3 and session 4) by cutting both short and jumping out a window the second time. Scales, Kaldur, Enjee, and Roadie have all firmly refused the ladder — Kaldur specifically swore &#39;by the power of the Borodin Sarmine, I&#39;m not fucking saying that&#39; and chose to stay a level behind rather than take the bribe. Outside the band: Kostov the Ratatouille, encountered mid-barrow fight in session 3, claims to be a level-4 moon knight from the World Tree and openly a disciple — though Kaldur&#39;s insight check caught him pausing strangely every time he named William Moon, so his exact relationship to the faith is still an open question. Rico&#39;s conversion pitch has survived into session 4 (he tried, and failed, to convert Dzan the Red Wizard in his cell on the morning of the burning gig).</span></span>
+        </div>
+      </div>
+    
+
+    
+      <h2 class="section-head">Session Notes <span class="count">3</span></h2>
+      <div class="ledger">
+        
+          
+          
+            
+            
+          
+          <div class="entry">
+            <span class="seal active"></span>
+            <span>
+              <span class="entry-title">Session 4: We Didn&#39;t Start the Fire</span>
+              <span class="entry-body">William Moon appeared to Dreadie twice (outside the Big Fat Knucklehead as a fisherman, and at the Wet Trout as a big-titted woman flashing the crowd — simultaneously appearing to Rico as the same big-titted woman); then teleport-abducted Dreadie out of the outhouse into a private room to declare Rico and Dreadie &#39;my two disciples.&#39; Dreadie refused and leapt out the window. In Rico&#39;s blackout-drug dream in the same outhouse, William Moon reaffirmed Rico as &#39;the moon sign&#39; (because &#39;Rico&#39; means &#39;the chosen one&#39;), delivered a new tenet — Tenet #73, Prioritize — and added gorilla-panic lore about moon-elf enzymes. Rico tried, and failed, to convert Dzan the Red Wizard in his cell on the morning of the burning gig; Dzan accepted the pitch in exchange for freedom and Enjee shut it down.</span>
+            </span>
+          </div>
+        
+          
+          
+            
+            
+          
+          <div class="entry">
+            <span class="seal active"></span>
+            <span>
+              <span class="entry-title">Session 3: By the Power of William Moon</span>
+              <span class="entry-body">William Moon&#39;s first on-screen appearance: time-frozen cutscene in the William Moon barrow, elevated Rico to &#39;paladin of lunanescent suffocation,&#39; and canonized the party-wide activation phrase &#39;By the power of William Moon, I possess the wherewithal!&#39; as a free level-up ladder. Dreadie cashed it mid-combat and then refused discipleship. Also this session: Rico read the entire 41+ Book of Moon-nite tenets aloud to a &#39;sleeping&#39; Enjee for four hours (Enjee can&#39;t close his eyes, so Rico never knew), and William Moon rewrote the pamphlet in real time to clarify Tenet #8 — &#39;don&#39;t be gay&#39; got an asterisk and &#39;actually gay stuff is fine&#39; as fine-print. Kostov the Ratatouille moon-knight introduced himself as a fellow disciple from the World Tree — Kaldur&#39;s insight caught him pausing strangely every time he named William Moon.</span>
+            </span>
+          </div>
+        
+          
+          
+            
+            
+          
+          <div class="entry">
+            <span class="seal active"></span>
+            <span>
+              <span class="entry-title">Session 2: Shearing the Wolf</span>
+              <span class="entry-body">Rico established the religion in play: pushed &#39;Men of Moonlight&#39; as the band&#39;s real name, dropped his signature pickup line (&#39;so you heard the good news about William Moon?&#39;) on Prudence (whiffed), and talked the party into the gaslit cosmology that Odin was William Moon in disguise and Asgard sits inside the plane of Isgard alongside Selûne&#39;s Argenteel. The White Lady froze his exposed dick into a camel toe during the seance when he asked a greedy question — the first canonically-recorded instance of &#39;the Moon&#39; punishing a bad disciple on-page.</span>
+            </span>
+          </div>
+        
+      </div>
+    
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 3 session(s) chronicled
+     · last updated 2026-10-06T10:56:36Z
+  </footer>
+</body>
+</html>
