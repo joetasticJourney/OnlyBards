@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 5: Makes House Party look like House Party 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 5: Makes House Party look like House Party 2
+    
+    <a class="transcript-link" href="sessions_2026-10-13-makes-house-party-look-like-house-party-2_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>The band treks from East Haven to Caer Dineval, the next stop on Herbius Beardman&#39;s booking spree. Caer Dineval is barely a town — one surviving tavern (the Uphill Climb) and a lot of weird vibes. Rourke, the Northman barkeep, already knows the band by reputation, name-checks Kaldur&#39;s uncle (the dwarf who allegedly killed the Kerr Koenig chandelier dragon with a brick), and books them for the night. Dreadie orders a Dirty Shirley before the stage is built.</p>
+    
+      
+      <p>Rourke also hands over lore that makes the party raise their eyebrows at each other: the Caer up the hill is now guarded by a dozen soldiers with black swords, the Speaker is &#39;taken ill,&#39; and everyone&#39;s spooked. His old inn across town, Denev&#39;s Rest, went haunted on him after bar staff started disappearing. Roadie&#39;s eyes light up like a slot machine.</p>
+    
+      
+      <p>Roadie&#39;s exorcism plan is simple and insane: buy two kegs off Rourke as &#39;ritual materials,&#39; load them on top of the Chuggy Pig with a stage, parade a drunken rock-and-roll conga across town, and dump Caer Dineval into the haunted inn to overwhelm the ghosts with positive vibes and cocaine. He charges a silver a beer. Dreadie belly-flops trying to kick the door down and breaks his pinky toe. Scales dive-rolls through a window Conan-style; Enjee picks the lock from the inside anyway. Scales buries his dragon snout in a bar line of cocaine, grows haste-shark eyes, breathes fire for atmosphere, and takes his pants off at some point. They never come back on.</p>
+    
+      
+      <p>The &#39;ghosts&#39; are the last of the Sunblight clan — Deep-Duergar remnants with Mind Masters and Soul Blades, hiding in Denev&#39;s Rest&#39;s bones and maintaining the haunted exterior to keep locals away. Enjee eats a stab-ambush from a hidden Soul Blade and nearly goes down. Scales body-checks through an interior wall instead of going around. His exposed dragon penis distracts an enlarged Duergar into face-planting the wall. Kaldur sniffs &#39;smelly Duergar&#39; through the floor and starts chopping the second a hole opens.</p>
+    
+      
+      <p>Meanwhile Roadie&#39;s crowd goes Woodstock-99 feral. The only cop in town is beaten reverse-Rodney-Kinged dead. Roadie grapples a Mind Master into chains at the stair-top and shoves him down into the mob; the DM narrates the result in three staccato beats — &#39;Pumbled to death. Crit, crit, crit.&#39; A middle-aged woman pulls her top off and screams &#39;anarchy.&#39; An eleven-year-old boy named Timmy picks up a dead Duergar and starts devouring him. Kaldur, blood-soot-smeared and surrounded, patiently talks the mob down with &#39;I&#39;m one of the good ones.&#39; Rico — barely-NPC&#39;d with Troy absent — glazes over every time William Moon comes up and face-plants on top of Kaldur after jumping a window.</p>
+    
+      
+      <p>Dreadie finds Roadie back onstage shredding a Dreadwurst-flavored solo, and holds out a bone guitar pick as a test — innocent bison bone, Dreadie&#39;s own, but the moment still lands. He needles Roadie by his old stage name — &#39;Wets Gorland&#39; — and Roadie drops the pick, walks away from his own crowd, then quietly doubles back to decapitate a dead Duergar on the hypothesis the brain holds the soul-weapon craft, with the stated plan to build Rico a magic pick. Kaldur watches wordlessly as Roadie makes the exact same mistake two sessions in a row.</p>
+    
+      
+      <p>The Duergar piggy bank behind a dart-trapped floorboard pays out: 340 gold, 620 silver in ale profits, four garnets, two black onyx, a mithril ingot, potions of growth and invisibility, a bag of mystery alchemical dust Kaldur declines to open, and a ceremonial +1 war pick engraved with Deep-Duergar iconography that nobody except Scales wants to carry. Rourke pays the band 20 gold a head afterward and insists on paying even after they confess it was Duergar — the ghosts are gone, close enough.</p>
+    
+      
+      <p>Everybody levels up to four. Back at the Uphill Climb, Scales pulls Dreadie aside for a private favor. A years-old throat injury has been limiting his &#39;delicious power of accent.&#39; Dreadie casts Cure Wounds; Scales coughs up a wet red lump Dreadie tries to put back in with a handkerchief; and Scales speaks in his real voice — a thick Louisanna drawl from a town named for its founders, Lewis Dutre and Anna Winters. The band stares. Dreadie&#39;s defense: &#39;Dreadie Mercurie didn&#39;t know.&#39; The late crowd has dwindled to a table of four priests. The band plays for them anyway. Scales grinds his sax on a priestess until she goes visibly unchaste and asks for Scales and Rico upstairs. Scales answers &#39;oh dear, let&#39;s just take everybody.&#39; Troy absent, the session ends there.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Scales</div>
+        <ul class="quote-list">
+          <li>&ldquo;You&#39;re not going to ask about William Moon?&rdquo;</li><li>&ldquo;I have not felt as good in years.&rdquo;</li><li>&ldquo;Oh dear, let&#39;s just take everybody.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m regular colored. I&#39;m one of the good ones. I&#39;m one of the good ones.&rdquo;</li><li>&ldquo;When I came here, I didn&#39;t think I&#39;d get to kill so many fucking greyskins.&rdquo;</li><li>&ldquo;You know, I think I&#39;m starting to think Roadie&#39;s a bad influence on people.&rdquo;</li><li>&ldquo;What the fuck happened to your voice?&rdquo;</li><li>&ldquo;No dwarf would lie and not have any Duergar they fucking killed.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Dreadie Mercurie needs to make sure they have a good time.&rdquo;</li><li>&ldquo;Christ, Roadie. What&#39;s wrong with you?&rdquo;</li><li>&ldquo;Dreadie Mercurie didn&#39;t know, so don&#39;t tell Dreadie Mercurie, Dreadie Mercurie didn&#39;t know.&rdquo;</li><li>&ldquo;Fungus beard. Try that next time. See, you&#39;re a poet and you didn&#39;t know it.&rdquo;</li><li>&ldquo;Dreadie Mercurie has waited for this moment his entire life.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m sorry, I&#39;m still trying to forget my — I don&#39;t know.&rdquo;</li><li>&ldquo;What do you want us to look for?&rdquo;</li><li>&ldquo;I&#39;m not going to speak.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Barkeep, over here for a sec. I heard you said something about your old place. It&#39;s haunted.&rdquo;</li><li>&ldquo;You know, originally — you know — we just, you know, wanted to make sure we had a really good show.&rdquo;</li><li>&ldquo;Surely these people can handle their booze and cocaine, right?&rdquo;</li><li>&ldquo;This isn&#39;t who I am anymore.&rdquo;</li><li>&ldquo;I gave him fake drugs. He just thought it was good.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;He somehow made it so that pumping the moon don&#39;t stop.&rdquo;</li><li>&ldquo;Scales, is that what you&#39;re doing to this poor woman? Oh, Scales, you are absolutely stripping the brass off this bitch whistle.&rdquo;</li><li>&ldquo;The Gravelguts are famous for our wisdom.&rdquo;</li><li>&ldquo;He is so distracted by your strange dragon penis that he hits the wall.&rdquo;</li><li>&ldquo;Pumbled to death.&rdquo;</li><li>&ldquo;You watch that 11-year-old child from before pick up the duergar and start devouring.&rdquo;</li><li>&ldquo;Roadie has whipped these people up into the kind of thing where tomorrow this town might not be able to look at each other ever again. January 6th all over again.&rdquo;</li><li>&ldquo;This is like full-on cult behavior.&rdquo;</li><li>&ldquo;Short people got no reason, no reason to live. They got their nasty little feet and their retard arms.&rdquo;</li><li>&ldquo;Little Timmy, he&#39;s got such promise ahead of him. He wants to travel down to Waterdeep and become a master of healing. He really does.&rdquo;</li><li>&ldquo;The ghosts are gone, close enough.&rdquo;</li><li>&ldquo;The uphill climb — it&#39;s a tradition at the end of the night when everybody&#39;s really drunk, they try to get the drunkest people to race up the hill towards the keep. It&#39;s funny. They usually fall.&rdquo;</li><li>&ldquo;The Speaker&#39;s new security force up at the keep is really creeping everybody out. All wielding black swords.&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">6</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 44.0%"></span>
+        <span class="talkbar-pct">44%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">74m 10s</span>
+        <span class="talkbar-val-words">8,245 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 18.0%"></span>
+        <span class="talkbar-pct">18%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">30m 23s</span>
+        <span class="talkbar-val-words">4,627 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 17.0%"></span>
+        <span class="talkbar-pct">17%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">28m 42s</span>
+        <span class="talkbar-val-words">3,167 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 7.8%"></span>
+        <span class="talkbar-pct">8%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">13m 08s</span>
+        <span class="talkbar-val-words">1,522 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 6.9%"></span>
+        <span class="talkbar-pct">7%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">11m 38s</span>
+        <span class="talkbar-val-words">1,378 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">bad token</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 6.3%"></span>
+        <span class="talkbar-pct">6%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">10m 34s</span>
+        <span class="talkbar-val-words">916 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Scales</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Kaldur Gravelgut</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 4 session(s) chronicled
+     · last updated 2026-10-13T07:52:28Z
+  </footer>
+</body>
+</html>
