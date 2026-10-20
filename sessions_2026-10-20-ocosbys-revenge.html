@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 6: O&#39;Cosby&#39;s Revenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 6: O&#39;Cosby&#39;s Revenge
+    
+    <a class="transcript-link" href="sessions_2026-10-20-ocosbys-revenge_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>The band climb the hill to the Caer Dineval keep, where a young guard named Hwar-war (from Bremen, son of a tavern-wench at a place called Hidden Treasures) and a cold-skinned, fire-handed tiefling named Fel Supara wave them in to meet the acting speaker, Kedroth. Kedroth is a snob with a Levistus holy-symbol pinned to every shield in the keep, treats his servants like dog-kennel kindling, and name-drops Cranach the real Speaker as &#39;bedridden, poor thing&#39; upstairs. Dreadie flirts Fel straight into the dog kennel for very public cheek-clapping, directly over an eleven-year-old Kalashite servant named Alisar.</p>
+    
+      
+      <p>Enjee rescues the kid out of the kennel&#39;s cold and redirects him to the Chuggy Pig, where Herbius Beardman is already drafting a child-labor contract. Roadie puts a mascot head on another abused servant named Mere and makes him the night&#39;s skanking dancer. While the band &#39;warms up,&#39; Dreadie misty-steps through an upstairs window via a 19 acrobatics and finds Cranach — alive, bored, reading a book — who promptly gets Charm-Personed by Dreadie just for walking in: &#39;I&#39;ve always considered myself a heterosexual, I don&#39;t know what&#39;s come over me.&#39;</p>
+    
+      
+      <p>Roadie Cosbys up a decanter — xanax, morphine, and Drow Poison from his William-O.-Cosby bandolier — and sells it to Kedroth as the premium pour, with a second carafe left out for the lone upstairs guard. The band plays through a DC-18 performance meter, Kaldur&#39;s bass locking it over the top, and every Knight of the Black Sword face-plants mid-headbang. Scales glimpses the platinum dragonborn mentor again, silver-winged, flying off into the night with a parting &#39;you need to hit the shed, bro.&#39; Roadie, under cover of swaying to the beat, grapples Kedroth and chains him in place.</p>
+    
+      
+      <p>Dreadie slits Kedroth&#39;s throat with a dinner knife. Kedroth convulses, bleeds, voids his bowels, and dies. Scales then uses one HP of Lay on Hands to revive him at the exact moment of death — just so Dreadie can slit his throat a second time, same way, for symmetry. The DM: &#39;it&#39;s gorgeous.&#39; Kaldur, holding a now-cold cup of Cosby&#39;s own poison, dedicates the night to William O. Cosby. May he burn.</p>
+    
+      
+      <p>Looting the keep nets 1200 gp from Kedroth&#39;s chest, 150 gp of fine inks and parchment, a scroll of Hold Person, five Levistus-sigil parchment holy symbols, an Austin-Powers-brand Swedish enlargement pump, and the ten whispering black longswords the Knights were wearing. Kaldur recognizes the whisper — it&#39;s Shardalyn, the same corrupting voice from the East Haven Town Hall statue. Roadie breaks a tip off one, cases it in bone, and declares the band&#39;s new Pick of Destiny. The other nine blades go in a crate. Dreadie O&#39;Cosbys Hwar-war at the gatehouse (second-try Charm Person, with poison advantage); Fel Supara is lured up with &#39;Cosby O&#39;Cola&#39; and dumped unconscious on top of Kedroth&#39;s body with the murder knife in her hand — Roadie&#39;s framing idea. Scales eats chowder with Juru, the keep&#39;s chef, who confesses between slurps to having been fired from a Deseret-Valley restaurant for being &#39;dick-goated&#39; mid-service.</p>
+    
+      
+      <p>Troy arrives mid-session with Rico just in time for Avarice — a pale-skinned Levistus wizard with a decades-old grudge against a gnome named Grimmond who stole her Staff of Frost in a previous life. She opens with a 36-damage fireball that drops Roadie and Enjee simultaneously to zero HP. Behind her is an eight-foot pillar of ice: a horned figure wrapped in black chains, wearing a backwards red hat (Dreadwurst-coded), being worshipped as a Levistus altar. Kaldur throws his bass at Avarice as a Thor&#39;s-hammer forge-adept thunderbolt, Enjee lightning-bolts the brown mold out of existence, and Scales mows Avarice down with the saxophone. She dies cursing &#39;Grimmond.&#39; Her spellbook is almost entirely fire spells — because she used to balance it with the Staff of Frost before the gnome.</p>
+    
+      
+      <p>The ice shrine is the party&#39;s biggest temptation of the session. Roadie wants to haul it onto the Chuggy Pig as a stage prop; Rico agrees. Kaldur, religion-checking it, identifies the figure as Levistus of the Fifth Hell (who allegedly fucked Asmodeus&#39;s wife and daughter). The effigy opens jet-black eyes and taunts Roadie telepathically, Dreadwurst-style: &#39;all those young people stomping each other&#39;s guts out all because of your heavy cock and balls guitar riffs — how do you live with yourself?&#39; Roadie: &#39;I&#39;m a pacifist. I don&#39;t kill anyone anymore. That&#39;s just causation versus correlation.&#39; Rico declares a new tenet — &#39;Don&#39;t touch ugly ice,&#39; number 88 — and the ice stays. Dreadie, in protest of Roadie&#39;s staring contest, draws a dick on his forehead with a marker.</p>
+    
+      
+      <p>In the basement they free the cells: Cranach&#39;s notary Lance Alderdusk, the butler Elbrecht Norbrav, the castle&#39;s former dog-keeper, and a scarred housemate named Tam Sharf, mute from being hanged years back on a bungee cord. Rico lays the Book of Munin on her throat, calls on William Moon, and Tam Sharf&#39;s hanging scar regenerates and she speaks for the first time in years. Kaldur Gravelgut, who has always quietly suspected William Moon was bullshit, watches it happen in real time, eyes wide. Tam Sharf — voice back for the first time in years — turns on Rico and asks &#39;how much does he forgive, hypothetically — how bad of a thing?&#39; Rico, airily: &#39;Is it a gay thing? No? Just murder? You&#39;ll be okay then.&#39; Tam takes the Book of Munin out of his hands and starts reading it (&#39;Oh, Silvery Moon, huh?&#39;). Meanwhile William Moon manifests next to Rico, speaks through Kaldur&#39;s throat to brief him (&#39;I&#39;m using Kaldur to speak — did you notice? That was cool, huh?&#39;), and gets irritated by proximity to the Dreadwurst-flavored ice. Dreadie hears all of it. Rico misses the entire visitation. The band pockets 200 gp each from Cranach&#39;s treasury, agrees to stockade the Shardalyn-corrupted knights until the swords&#39; influence wears off and let East Haven decide the rest, and the Caer is retaken.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Scales</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m just a simple Dragonborn. We call it the saxophone.&rdquo;</li><li>&ldquo;I&#39;m not dancing on her. I&#39;m performing.&rdquo;</li><li>&ldquo;Tell me, how does this castle operate? What is its operating expenditures?&rdquo;</li><li>&ldquo;Can we do a double burning?&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;Moonlight will vanquish the infidel! Tenet 32.&rdquo;</li><li>&ldquo;By the wisdom of William Moon, I have determined that this block of ice is dangerous and we shall leave it alone.&rdquo;</li><li>&ldquo;I got four moms. You could be my fifth mom if you want.&rdquo;</li><li>&ldquo;I used the power of Moon-nights to summon William Moon and fill her with moonlight to expel the demon.&rdquo;</li><li>&ldquo;Is it a gay thing? No? Just murder? You&#39;ll be okay then.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;I mean, say what you will about the man, he made good poison.&rdquo;</li><li>&ldquo;Being able to use Bill Cosby&#39;s poison for some good is, uh, it kind of feels good.&rdquo;</li><li>&ldquo;This is the kind of guy who&#39;d stare at a statue of the Demogorgon.&rdquo;</li><li>&ldquo;Logic is the fucking worst tactic to use on a cultist.&rdquo;</li><li>&ldquo;If we were evil it&#39;d be fucking fantastic, but you know...&rdquo;</li><li>&ldquo;No, we gotta get these blades away from these people, they&#39;re fucking with their heads. It&#39;s like licking lead.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Dreadie Mercurie&#39;s just helping her with some bodily function work.&rdquo;</li><li>&ldquo;You can unpack that on your own time.&rdquo;</li><li>&ldquo;Dreadie Mercurie didn&#39;t need to charm you. Dreadie Mercurie&#39;s just natural personality echoes out in waves of charming energy.&rdquo;</li><li>&ldquo;Dreadie Mercurie is not working on any stage anywhere near that thing.&rdquo;</li><li>&ldquo;Dreadie Mercurie thinks you should knock him out.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;Nanya. It&#39;s Nanya business.&rdquo;</li><li>&ldquo;Don&#39;t ever call me Grimmond.&rdquo;</li><li>&ldquo;Come stand over here, you&#39;ll be a little better over by the fire. Don&#39;t worry about what you&#39;re doing today.&rdquo;</li><li>&ldquo;Yeah, we did our job. We&#39;re done.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m a pacifist. I don&#39;t kill anyone anymore!&rdquo;</li><li>&ldquo;That&#39;s just causation versus correlation.&rdquo;</li><li>&ldquo;They don&#39;t need to know about the extent of my crimes.&rdquo;</li><li>&ldquo;Sometimes I feel like devils just understand rock better than any of us living.&rdquo;</li><li>&ldquo;I feel like having a perfectly represented ice-encased effigy of a demon, or a devil, would really amp up our performance.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;I like to have them void their bowels in dramatic moments.&rdquo;</li><li>&ldquo;This episode is dedicated to William O. Cosby. May he burn.&rdquo;</li><li>&ldquo;I love a religious zealot character that is so bad at self-preservation that he&#39;s like &#39;guys, stop me,&#39; and the player is like &#39;I don&#39;t want to die, I like this guy.&#39;&rdquo;</li><li>&ldquo;William Moon looks over to Kaldur Gravelgut in this weird hypothetical thought realm and goes &#39;shut up, it&#39;s my narration — plus we&#39;re not even here right now, this is a hypothetical realm of thought.&#39;&rdquo;</li><li>&ldquo;You need to hit the shed, bro.&rdquo;</li><li>&ldquo;A fucking charlotte guitar pick — that&#39;s pretty goddamn metal.&rdquo;</li><li>&ldquo;All those young people stomping each other&#39;s guts out all because of your heavy cock and balls guitar riffs. How do you live with yourself?&rdquo;</li><li>&ldquo;I&#39;m using Kaldur to speak — I&#39;m speaking through your friend Kaldur. Did you notice that? That was cool, huh?&rdquo;</li><li>&ldquo;I don&#39;t speak beard mouth.&rdquo;</li><li>&ldquo;He&#39;s got such promise ahead of him — oh wait, wrong servant.&rdquo;</li><li>&ldquo;I will have your scrotum stapled to your thigh and make you do jumping jacks.&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">7</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 44.8%"></span>
+        <span class="talkbar-pct">45%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">102m 18s</span>
+        <span class="talkbar-val-words">13,064 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 18.3%"></span>
+        <span class="talkbar-pct">18%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">41m 48s</span>
+        <span class="talkbar-val-words">6,167 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 13.5%"></span>
+        <span class="talkbar-pct">13%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">30m 46s</span>
+        <span class="talkbar-val-words">5,094 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 10.1%"></span>
+        <span class="talkbar-pct">10%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">23m 04s</span>
+        <span class="talkbar-val-words">2,731 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 7.4%"></span>
+        <span class="talkbar-pct">7%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">16m 53s</span>
+        <span class="talkbar-val-words">2,605 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">bad token</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 3.1%"></span>
+        <span class="talkbar-pct">3%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">7m 04s</span>
+        <span class="talkbar-val-words">1,074 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 2.8%"></span>
+        <span class="talkbar-pct">3%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">6m 17s</span>
+        <span class="talkbar-val-words">866 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Scales</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Dreadie Mercurie</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    
+    <div class="entry"><span class="seal failed"></span>
+      <span><span class="entry-title" style="font-size:1rem">Enjee</span></span>
+      <span class="entry-meta tally"><b>1</b> knocked unconscious</span></div>
+    
+    <div class="entry"><span class="seal failed"></span>
+      <span><span class="entry-title" style="font-size:1rem">Roadie</span></span>
+      <span class="entry-meta tally"><b>1</b> knocked unconscious</span></div>
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 5 session(s) chronicled
+     · last updated 2026-10-20T08:52:32Z
+  </footer>
+  
+  
+  <script data-goatcounter="https://joetastic.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+  
+</body>
+</html>
