@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 7: Jail House Rock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 7: Jail House Rock
+    
+    <a class="transcript-link" href="sessions_2026-10-27-jail-house-rock_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>The band wakes up still inside the Caer with one loose thread: the one-legged dwarven oracle upstairs. Her name is Ethel Arkoron — blind, lame, Levistus priestess, former rocker (&#39;I gave a double handy at Woodstock 99&#39;). Because Levistus&#39;s beef with chaos aligns with the party, she offers one answer each. Kaldur gets a Delzunian crypt behind the Shining Falls. Scales learns he carries two divine bloodlines. Rico is sent to Moonsong Hill. Dreadie gets Virgats the Wretched&#39;s name. Roadie whispers for Bonothin Decavis&#39;s phylactery and gets the Blood Swamp in Grotzt. Enjee is told it was the green one, not the white one, who sent him. Ethel finishes her last answer, says a flat &#39;ah,&#39; and dies on the spot. Enjee loots a packet of powdered goat milk from her pocket.</p>
+    
+      
+      <p>On the way out, the band finds a bedazzled rocket sled in the street, tagged &#39;Rico and Dreadie&#39; and labeled &#39;the Moonmobile.&#39; Command word: by the power of the moon. It ejaculates glowing moon-juice out of a rear sphincter, leaves a glitter wake, and handles like a dream — so long as the command word gets spoken once a minute. Dreadie is horrified his name is on it. Kaldur begins carving Delzunian runes into the chassis in protest.</p>
+    
+      
+      <p>At Kaer Konig the band finds the Shardalyn-corrupted dragon corpse at Moonsong Hill — &#39;a place where spirits yearn to rock,&#39; per Thrynne the Black&#39;s note. Roadie wants to install amps inside the corpse and rock it awake. Kaldur religion-checks and says any priest trying to purify it unaided would stroke out — they need Virgats. Rico cites Tenet 72 (&#39;Don&#39;t fuck with Shardalyn&#39;) as both scripture and paladin vow. Roadie reluctantly agrees to go get the priest first.</p>
+    
+      
+      <p>At the Northern Light the band meets the current speaker Trovis, a vomit-soaked raging-alcoholic sociopath. He insults the barmaid Allie Sherrard; her Goliath brother-in-law Yorlt drops his satchel and rolls initiative. Dreadie Suggests Trovis &#39;take the night off and leave your daughters undisturbed&#39; — the DM lets it land despite Trovis having no daughters, and Trovis trudges upstairs in confused obedience. Pinia Galvain, a halfling fan from the East Haven gig, clonks him with a staff. The paddy wagon arrives Rocko&#39;s-Modern-Life-style. Pinia announces she&#39;s running against him in two weeks.</p>
+    
+      
+      <p>Roadie books the Sherrard sisters as dancers for the next night: 20 gp each, plus 1 gp extra so Allie&#39;s bodice stays on. Rico adds Yorlt to the lineup as a greased muscle-dancer at twenty-five gold. Scales is milked for lubricant and gives it willingly (&#39;I don&#39;t look a gift horse in the math&#39;). Rico and Kaldur then spend the evening oiling Yorlt down &#39;with mechanical precision&#39; while the winter scouts at the next table push their chowder away in horror. In Rico&#39;s room that night William Moon manifests, awards Rico &#39;Double Moon Deluxe Madness,&#39; quizzes him on the double-secret hidden tenets, and admits — when pressed — that he does not know where Moonsong Hill actually is.</p>
+    
+      
+      <p>At dawn the band blasts up to Revel&#39;s End in the Moonmobile. Roadie glimpses a red-glowing tree at the summit of Kelvin&#39;s Cairn in passing. Virgats the Wretched is a scarred, prosthetic-armed, Werner-Herzog-accented Ilmatarian priest running the Revel&#39;s End infirmary (&#39;I have to sew up all the assholes&#39;). Warden Pepperfist greets Kaldur as a fellow wax-cylinder recording nerd and books the band on the spot: 200 gp flat plus 50% of wax-cylinder sales, the band&#39;s biggest-ever payday.</p>
+    
+      
+      <p>The jailhouse concert starts in the red — 312 confused prisoners don&#39;t recognize Chaos Wolf. Rico brings it to orange. Roadie fashions a codpiece out of an endless-water decanter and spray-geysers the crowd like Danzig. Dreadie counts it up to yellow. Scales anchors with a dirty 25. Enjee lands a Neil Peart drum solo on a natural 20. The meter cracks green. Then Roadie, under direct instructions from his undead bat Vrock, grabs a handful of whatever is in his drug pocket and spraygeyser-blasts it into the audience — rolling a 76 on the drug table (infernal/necromantic/forbidden) and 144 on the demonic mutation table. One prisoner, Gregory, sprouts huge wings, grabs a guard, and flies off to be eaten by demons. Roadie and Dreadie play it off as a stage effect with a 25 performance/deception combo. Warden Pepperfist buys it: &#39;I can&#39;t believe they got Gregory to be in on that — he hates performance.&#39; Twenty platinum change hands.</p>
+    
+      
+      <p>On the ride back Vrock vomits Gregory&#39;s ring finger into Roadie&#39;s palm as confirmation. Roadie quietly adds it to his growing pouch of Vrock-donated fingers. At Kaer Konig, Virgats plants his cudgel at the base of the Shardalyn dragon and begins to chant.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Scales</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m just a simple virtuoso saxophone Dragon Ball player.&rdquo;</li><li>&ldquo;If you&#39;re an oracle, you know my future belongs to destroying all eldritch whores that I can see.&rdquo;</li><li>&ldquo;I don&#39;t look a gift horse in the math — you want a little bit of my juice, just let me know.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;Don&#39;t fuck with Shardalyn — that&#39;s one of my paladin vows. Tenet 72.&rdquo;</li><li>&ldquo;I think I think we got to go to the top of the top of the world up that fucking mountain over there — that&#39;s where we play our concert.&rdquo;</li><li>&ldquo;No, this is not gay. This is badass.&rdquo;</li><li>&ldquo;I&#39;ll say a little prayer over her dead body in the name of William Moon and saloon — I bless this old bitch, she helped us figure this out.&rdquo;</li><li>&ldquo;William Moon, hey, you best make room — this man is gonna fill you up with light.&rdquo;</li><li>&ldquo;I am the chosen one — I&#39;m gonna get two moons.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m a good dwarven parent, which is like an alcoholic good parent.&rdquo;</li><li>&ldquo;I don&#39;t know, did the William O. Cosby prison on the door give you any clues?&rdquo;</li><li>&ldquo;I can&#39;t figure out, Roadie, if you&#39;re just suicidally stupid or just unbearably optimistic sometimes.&rdquo;</li><li>&ldquo;Yeah, hey, we got a giant laser-shooting dinosaur.&rdquo;</li><li>&ldquo;Yeah, we are Chaos Wolf — the band, not the cult, and we&#39;re here to play some music.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Dreadie Mercurie is all for the no moon bullshit.&rdquo;</li><li>&ldquo;Dreadie Mercurie ain&#39;t just a fruit — he&#39;s the whole damn salad.&rdquo;</li><li>&ldquo;I don&#39;t think Dreadie Mercurie would want to take out that book in this guy&#39;s presence.&rdquo;</li><li>&ldquo;Dreadie thinks music can do a lot of things, but Dredd doesn&#39;t think music can do that.&rdquo;</li><li>&ldquo;Dreadie Mercurie thanks you for your duplicity.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;Point taken. I&#39;m going to hang around with these nutbags then.&rdquo;</li><li>&ldquo;That is metal as fuck.&rdquo;</li><li>&ldquo;It&#39;s not gay if we&#39;re all doing it.&rdquo;</li><li>&ldquo;What the hell is going on?&rdquo;</li><li>&ldquo;I don&#39;t want to miss a gig.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m sure once we rock out on top of this dragon, the dragon can fly us to the top of the mountain.&rdquo;</li><li>&ldquo;Well, I mean, if it was awakened by our music, then our music would control it, and we would be fine.&rdquo;</li><li>&ldquo;You just gotta feel the notes, baby.&rdquo;</li><li>&ldquo;I&#39;m just letting you know that that&#39;s what we want, and then after you see the show inside, you let me know if it&#39;s what you want as well.&rdquo;</li><li>&ldquo;The power doesn&#39;t come from me — it comes from Dio.&rdquo;</li><li>&ldquo;I was fully not gonna do that until the bird told me to do it.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;I used to rock out pretty hard — I gave a double handy at Woodstock 99.&rdquo;</li><li>&ldquo;You&#39;re not an Ilmatite, so you haven&#39;t read the brochure. Of course there is a difference between suffering and righteous suffering.&rdquo;</li><li>&ldquo;Sometimes the prisoners, you see, they fuck each other in the ass and they don&#39;t have the lube, and they think that the spit will do it, and it won&#39;t — it runs out. It is not better for me having to sew up all of the assholes.&rdquo;</li><li>&ldquo;The Lord&#39;s Alliance has made it very clear that we are not to dehumanize the prisoners. So prisoners deserve to listen to hyper-violent speed metal the same as everyone else.&rdquo;</li><li>&ldquo;I can&#39;t believe they got Gregory to be in on that — he hates performance.&rdquo;</li><li>&ldquo;Just because you&#39;ve committed a crime doesn&#39;t mean you&#39;re a criminal.&rdquo;</li><li>&ldquo;You are a disciple whether you fucking like it or not — that&#39;s how discipleship works.&rdquo;</li><li>&ldquo;I&#39;m using Kaldur to speak — I&#39;m using you to look over whatever the moonlight touches, so I&#39;m in a million places at once. That&#39;s why we have to have disciples like you.&rdquo;</li><li>&ldquo;She&#39;s got three different aspects, so — cool, man, you got three titties?&rdquo;</li><li>&ldquo;He like, walks out. You gonna do what now?&rdquo;</li><li>&ldquo;By the power of the moon — a glowing blast of moon water, moon juice squirts out of the back, squirts out of the ejaculation sphincter.&rdquo;</li><li>&ldquo;He vomits a ring finger into your palm.&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">7</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 55.4%"></span>
+        <span class="talkbar-pct">55%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">116m 11s</span>
+        <span class="talkbar-val-words">13,520 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 14.3%"></span>
+        <span class="talkbar-pct">14%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">29m 54s</span>
+        <span class="talkbar-val-words">3,034 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 12.1%"></span>
+        <span class="talkbar-pct">12%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">25m 24s</span>
+        <span class="talkbar-val-words">3,831 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 6.8%"></span>
+        <span class="talkbar-pct">7%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">14m 14s</span>
+        <span class="talkbar-val-words">1,443 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 5.0%"></span>
+        <span class="talkbar-pct">5%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">10m 26s</span>
+        <span class="talkbar-val-words">1,536 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 4.8%"></span>
+        <span class="talkbar-pct">5%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">9m 58s</span>
+        <span class="talkbar-val-words">1,114 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">bad token</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 1.7%"></span>
+        <span class="talkbar-pct">2%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">3m 29s</span>
+        <span class="talkbar-val-words">407 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Roadie</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 6 session(s) chronicled
+     · last updated 2026-10-27T19:41:58Z
+  </footer>
+  
+  
+  <script data-goatcounter="https://joetastic.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+  
+</body>
+</html>
