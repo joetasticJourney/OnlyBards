@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 8: Chardalyn Gone Wild</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 8: Chardalyn Gone Wild
+    
+    <a class="transcript-link" href="sessions_2026-11-03-chardalyn-gone-wild_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>Scales spent the whole session off-stage, chemically dead in a Chuggy Pig bedroom. The player had been up until 4 a.m. the night before, so Kaldur&#39;s canon was that Scales was &#39;doing heroin in his room — the kind distilled from poppy, that you put on a spoon and heat up and inject into your veins.&#39; The band went to work short one brass dragonborn.</p>
+    
+      
+      <p>At the Northern Light, prep for the evening show spiraled immediately. Roadie offered Rico a pinch of mystery drug pocket — Rico, mystery-powder-pilled, drew Blinker Powder, teleported thirty feet outside, then teleported back in face-first into Ali Sherrard&#39;s chest (Roadie later revealed the gorilla panic packet Rico had refused was the harmless green-tea decoy). While Rico was rebooting, Enjee stripped out of his linen pants to oil Yorlt&#39;s calves, and his own confusingly enormous flaccid penis dragged on the floor. Kaldur, across the room, spotted a tiny star-shaped birthmark on the left side of Enjee&#39;s dickhead — identical to the famously enormous, floating, floor-dragging genitalia of one Osifred &#39;Ozzy&#39; Grimmund, court wizard of King Havel. The dwarf went quietly nuclear.</p>
+    
+      
+      <p>The gig was a legendary critical success. Kaldur slap-bassed; Dreadie counted it in; Rico gave Yorlt a dedicated bardic inspiration and then jumped off the table, teleported through the ceiling, landed in the snow on the roof, and teleported back inside landing face-first on Yorlt&#39;s thigh. Yorlt helicopter-dicked a single drop of dew into a lady&#39;s beer. Enjee solo&#39;d. The crowd lost its mind, and the band walked out with Yorlt and both Sherrard sisters as full-time &#39;Solid Gold Dancers.&#39; Mir and Alisar skimmed the bar tips like Kaldur taught them.</p>
+    
+      
+      <p>In the post-show hush, Kaldur leaned on Enjee: you knew Ozzy. Yes — technically my father, kind of. Ozzy made him, same way he made Ratabast, out of &#39;his own skeleton he somehow got out of his body&#39; — Enjee is an ooze over a dwarf skeleton, a purple T-1000 with a vestigial anus that eats peanuts for flavor. He grew up second fiddle to Ratabast. Enjee&#39;s tenure as the band&#39;s drummer is partly a Witness Protection arrangement.</p>
+    
+      
+      <p>From there, back to the Terror — the Shardalyn dragon corpse hollowed out and squatting in Kerr Konig. Virgats the Wretched, an Ilmatarian priest, demanded to be chained to a statue through the links by his own balls (he squeezed his nuts through the iron rings, moaning), then absorbed the dragon&#39;s psychic corruption into himself with gusto. Three Duergar specters and an invisible poltergeist — the last tenants of this dragon, who died when something came up from the Underdark — tried to kill the band before Virgats could finish. Dreadie&#39;s spirit guide this fight was a headless ghostly Kurt Cobain who shot the sharpshooter beat.</p>
+    
+      
+      <p>Inside the cleansed dragon, the party looted an inn that had been crushed and repurposed. Kaldur found the actual paving stone King Havel killed the Shadow Dragon with — and, nearly weeping at the vindication, decided it was a holy site and left it exactly where it lay. They found a shield with the mark of Deep Duerra, a double-visored magic helm, a ghostly dwarven battle-axe haft, a brewery with a Gibbering Mouther trapped in a still, a bathing drow siren in a sub-floor pool who made out with Rico so hard underwater he nearly drowned, and, in the sub-cellar, a wine room with five special bottles plus the Queen of Moonlight&#39;s own Moon Mead. The drow transferred Rico a very friendly STD called Kraken&#39;s Kiss — a tiny tentacle that now emerges from his urethra and can hold a guitar pick. By session&#39;s end, Kaldur was sketching a double-neck cock-guitar strap design on the back of the Duergar ledger.</p>
+    
+      
+      <p>Kaldur, using a +3 Magecraft&#39;d brewing kit, distilled the Gibbering Mouther into a single jug of Gibbering Moonshine. Roadie pocketed it. They refused to give Rico any. The party found the cellar chasm that leads straight to the Underdark — same chasm the Duergar who built this place came up through — and left it unsealed, for later.</p>
+    
+      
+      <p>Second gig: back at the Terror, charging one silver a beer, with the dragon corpse itself tapped as a psionic amplifier via Roadie&#39;s bass cable (Kaldur jury-rigged it). The band smashed it — a 25, a 25, a natural 20, a bumpable one-tick-from-green. Then, caught up in the moment, Rico demanded a shot of the Gibbering Moonshine mid-set. He failed the DC-17 Con save, and eyeballs opened all over his body — palms, back of hands, forearms, face. The crowd screamed and ran. William Moon manifested and poked a finger-cane to Rico&#39;s forehead to put the eyeballs away, declaring (in horror) a brand-new tenet: &#39;Two eyes only.&#39; Roadie covered it as a silent-image special-effect gaff and talked the crowd into a free-round encore. Critical success, +3 renown. The Terror is now the band&#39;s official bastion, with an open hallway to the Underdark in the basement.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;Only Dreadie Mercurie and Rico see William Moon.&rdquo;</li><li>&ldquo;Tenant number 27 is dancing is next to moonliness.&rdquo;</li><li>&ldquo;That&#39;s just the moon.&rdquo;</li><li>&ldquo;Tenant number 40 — William Moon will find you.&rdquo;</li><li>&ldquo;I filled her with moonlight.&rdquo;</li><li>&ldquo;My dick has a dick. We got to use this.&rdquo;</li><li>&ldquo;Moon is wise. Tenet 89. Two eyes good, any other number bad. Be on the lookout.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;You haven&#39;t been sampling the fucking product, have you?&rdquo;</li><li>&ldquo;Remember, 86 means if they get too fucking drunk and rowdy, call one of us and we throw him the fuck out.&rdquo;</li><li>&ldquo;Rudy, look, I&#39;m kind of having a heart-to-heart with Enjee about his past and fucked-up shit that&#39;s happening, and you&#39;re kind of turning it into a business opportunity, which is sort of shitty.&rdquo;</li><li>&ldquo;That&#39;s heroin the drug — the kind you put on a spoon and heat up and inject into your veins. Not the kind that&#39;s a hero who&#39;s female. The drug.&rdquo;</li><li>&ldquo;I don&#39;t even know how he walks. Well, he doesn&#39;t. He floats. But beside the point, before he floated, I don&#39;t know how he walked.&rdquo;</li><li>&ldquo;I&#39;m not going to lie, I want to negotiate with the Ten Towns to let the dwarves claim this place for King Havel. I feel like he&#39;d really appreciate it.&rdquo;</li><li>&ldquo;Look, man, making this was a terrible idea. I don&#39;t appreciate that you took my fucking need to know how shit works and turned it against me there.&rdquo;</li><li>&ldquo;You know what? That gives me an idea.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;What was that for me?&rdquo;</li><li>&ldquo;Dreadie Mercurie wants to know what the rest of your body looks like underwater.&rdquo;</li><li>&ldquo;That&#39;s definitely something from the far realm.&rdquo;</li><li>&ldquo;Dreadie Mercurie doesn&#39;t kink-shame.&rdquo;</li><li>&ldquo;Hey Rico, have you checked the tenets to see if anything has showed up on how to say no to William Moon?&rdquo;</li><li>&ldquo;Dreadie&#39;s beautiful, masculine yet feminine face.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;Please don&#39;t say that name too loud. He might hear you.&rdquo;</li><li>&ldquo;He&#39;s uh — I guess technically my father. He&#39;s the guy who created me.&rdquo;</li><li>&ldquo;He creates shit. He likes to make things, because he&#39;s got no friends, so he tries to make his own friends. Because he&#39;s a megalomaniac.&rdquo;</li><li>&ldquo;I take a peanut off of the counter and I shove it into my belly and it just kind of sinks in and then it just starts to get eaten up by acid.&rdquo;</li><li>&ldquo;He was always rat-a-bastard, rat-a-bastard, and going on and on about him. And then he&#39;d come see me for six months because he was too busy and far with that guy.&rdquo;</li><li>&ldquo;Somebody keeps talking about this sex thing. I don&#39;t really know what it&#39;s all about.&rdquo;</li><li>&ldquo;I don&#39;t breathe anyway, so I&#39;m good.&rdquo;</li><li>&ldquo;Those are my cousins.&rdquo;</li><li>&ldquo;I show up to look down here for her.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Above-table, evil Rico — the gorilla panic was green tea. You could have safely picked the gorilla panic.&rdquo;</li><li>&ldquo;Oh, just, you know, after you&#39;ve absorbed all the evil from this dragon, it would really help with our pyrotechnics, you know?&rdquo;</li><li>&ldquo;I could, you know, chain you to that statue in a manner most unpleasant.&rdquo;</li><li>&ldquo;He&#39;s he&#39;s clacking his pinchers at me, he must want more treats.&rdquo;</li><li>&ldquo;You know what? Enjee, I couldn&#39;t help but notice that maybe you have some assets that could benefit the band on stage that you&#39;re not using.&rdquo;</li><li>&ldquo;What if we took your entire drum set and turned it upside down and suspended it and you could dangle from your member and play your drums?&rdquo;</li><li>&ldquo;I&#39;m a little concerned that there&#39;s too many barrels in that area.&rdquo;</li><li>&ldquo;Imagine how good for the band it&#39;s going to be if he grows like a giant alien armor.&rdquo;</li><li>&ldquo;You hear that, Craig? That&#39;s canon. Scales is doing heroin in the big Chuggy Pig.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;That is such as the way of an Ilmatarian, or Ilmatarian priest.&rdquo;</li><li>&ldquo;You go to get oil from Scales and he&#39;s just like doing heroin in his room.&rdquo;</li><li>&ldquo;Rico, your dick itches. Dick itches — like your dick. Yeah, your dickhole. It&#39;s probably just, you know, your cannon&#39;s still hot, you know what I mean?&rdquo;</li><li>&ldquo;He&#39;s got Kraken&#39;s Kiss. A tiny little harmless tentacle periodically emerges from his dick hole. It can hold tiny objects.&rdquo;</li><li>&ldquo;Rico, there&#39;s something moving in your pants.&rdquo;</li><li>&ldquo;Rico, eyes open all over the entirety of your body.&rdquo;</li><li>&ldquo;I will offer my body and soul to the psychic presence and the spirits that lie within the structure. It will be agonizing. I might perish from it.&rdquo;</li><li>&ldquo;Oh, I up my cubes. I will slip my balls through the little inks. Yes, I will make them fit.&rdquo;</li><li>&ldquo;Oh daddy. I&#39;m here to eat all your boy pussies.&rdquo;</li><li>&ldquo;You know, Rico, your mama was moldy and shit.&rdquo;</li><li>&ldquo;Yeah, you have an anteater&#39;s tongue.&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">6</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 46.9%"></span>
+        <span class="talkbar-pct">47%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">93m 10s</span>
+        <span class="talkbar-val-words">12,120 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 18.7%"></span>
+        <span class="talkbar-pct">19%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">37m 06s</span>
+        <span class="talkbar-val-words">6,122 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 12.2%"></span>
+        <span class="talkbar-pct">12%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">24m 13s</span>
+        <span class="talkbar-val-words">2,652 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 9.0%"></span>
+        <span class="talkbar-pct">9%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">17m 54s</span>
+        <span class="talkbar-val-words">2,342 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 8.7%"></span>
+        <span class="talkbar-pct">9%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">17m 15s</span>
+        <span class="talkbar-val-words">1,616 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 4.5%"></span>
+        <span class="talkbar-pct">4%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">8m 53s</span>
+        <span class="talkbar-val-words">1,017 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Rico Lunae</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Kaldur Gravelgut</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Dreadie Mercurie</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    
+    <div class="entry"><span class="seal failed"></span>
+      <span><span class="entry-title" style="font-size:1rem">Rico Lunae</span></span>
+      <span class="entry-meta tally"><b>1</b> knocked unconscious</span></div>
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 7 session(s) chronicled
+     · last updated 2026-11-04T21:22:11Z
+  </footer>
+  
+  
+  <script data-goatcounter="https://joetastic.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+  
+</body>
+</html>
