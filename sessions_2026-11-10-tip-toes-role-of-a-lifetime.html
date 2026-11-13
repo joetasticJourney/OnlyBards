@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 9: Tip Toes: Role of a Lifetime</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 9: Tip Toes: Role of a Lifetime
+    
+    <a class="transcript-link" href="sessions_2026-11-10-tip-toes-role-of-a-lifetime_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>The Moonmobile rolls out of Caer Konig toward the Dwarven Valley, with the Chuggy Pig taking the longer road. Roadie has a new addition in tow — Alisander, the ex-Caer kennel boy, now dressed, styled, and accessorized as a miniature Roadie with his own tiny fan. Rico is already workshopping jokes for dwarves; Kaldur is bracing for the humiliation of pulling up to his ancestral home in the band&#39;s Chaos Wolf van.</p>
+    
+      
+      <p>At the gate, Vatsnil and Jorsite grill the party; Kaldur vouches, the band is let in. In the shrine to Klangadin Silverbeard, Rico rolls a 21 on religion and immediately uses the lore to call the whole room &#39;a bunch of fucking infidels&#39; out loud. Kaldur lays his old battleaxe on the altar as an offering; Klangadin — through his proxy Naval Gravelgut, Kaldur&#39;s great-great-great-great grandfather — blesses it to +1. Rico tries to save himself with a &#39;your pickaxes look like moons, Saloon&#39;s blessing on you&#39; crack that only lands after Dreadie rescues the room with &#39;what do you call a piano down a mineshaft? A flat minor.&#39;</p>
+    
+      
+      <p>In Paxton&#39;s forge the band hits the mother lode. Paxton — Kaldur&#39;s old mentor, back from a rough Feywild stint — is working on Mark 8 of his iron-man suit while Mark 7 does the surgical wiring. Scales gets examined like a specimen: scale shaving, gem shaving, oil sample. Paxton&#39;s verdict is that Scales is a brass–topaz chromatic × gem hybrid, &#39;never seen before,&#39; carrying two sources of divine blood. Paxton forges a brass bell onto Scales&#39; saxophone that doubles his breath-cone, hands him a spirit-catching glove triggered by a Backstreet-Boys &#39;bye bye bye&#39; gesture, and Dreadie picks up a dwarven rapier. Kaldur, out of pride, refuses to ask for plate.</p>
+    
+      
+      <p>In the mess hall Rico loses a drinking contest in two sips of gut-buster brew, snores off, and later projectile-vomits on Dreadie face-to-crotch while being carried in. Enjee draws tick-marks all over Rico&#39;s unconscious face with forge ash. Still drunk, Rico drags bar wench Mammy Reglands of the Longbags clan into the bathroom; mid-coitus he casts Silent Image to disguise her as Scales so he can finish &#39;for the moon.&#39; Enjee walks in, assumes Rico is banging Scales, and immortalizes the vision with Minor Illusion as a painting. &#39;Gay dragon porn at breakfast,&#39; complains a passing miner.</p>
+    
+      
+      <p>Lord Stokely Silverstream quotes 100 gp per dwarven member and 20 gp per non-dwarf. Roadie commissions a DC-25 latex disguise to turn Rico into &#39;Mooney Moonbeard of the Nesme Moonbeards&#39; and pocket the difference; Kaldur openly washes his hands of it. Scales, hungover, botches his opening solo by six, burns heroic inspiration to recover, and then lands a 23-against-22 perfect harmony with Rico that reduces the crowd to tears. Stokely shakes Mooney&#39;s hand on the floor, ups the non-dwarf rate to 30, and walks away with a copy of the Book of Munnen Rico slipped him. In the bathroom, Dreadie survives &#39;the most incredible titty-job of his life,&#39; briefly considers marrying Mammy Reglands, and makes his CON save.</p>
+    
+      
+      <p>Rolling out of the valley, Kaldur punches Rico in the mouth for the stunt. William Moon jogs on his back alongside the Moonmobile, kiss-finger-heals the lip, and whispers that Rico is his &#39;special play&#39; who has &#39;never done anything wrong.&#39; At the Blue Clam in Tourmaline the band meets Gulbrek the Wide — a full-blooded ogre with a scholar&#39;s intellect and a three-dragon-ante habit — who operates through the touched-in-the-head Vernon Bragg as a tax shield and his accountant Tickacticket (nicknamed Tick, or Connecticut) as signatory. Speaker Oris Mastiu books the band for tomorrow; Rico immediately insults him by theorizing aloud that half-dwarves and half-orcs are &#39;two inferior species put together.&#39;</p>
+    
+      
+      <p>At the gem-mine mouth the blood reads clearly: one human source, a lot of gnome blood, rubbery brain tidbits — intellect-devourer residue. Rico declares a new tenet on the spot: psionics are unclean. Inside, the recurring &#39;three kobolds in a trench coat&#39; from Kaldur&#39;s Greedy Six days ambush them. Kaldur Hail-Marys his axe and cleaves Thwip down to the lower jaw; Scales pinches the wound shut and pushes Cure Wounds through it, resurrecting him. Rico re-christens him &#39;Shablagoon&#39; and grants him a crescent-moon scar; William Moon manifests water wings and a crescent-moon helmet for Thwip, plus a crescent-moon diaper bag for Dreadie. Deeper in, Scales walks up to the uncannily eloquent &#39;Trex the Glorious,&#39; smacks him with the glove, and slurps the Black Ghost of the Greedy Six out of his eyes and nose, attuning the Glove of the Grim Fandango.</p>
+    
+      
+      <p>The freed kobolds — now worshipping Scales as a dragon — try to mine for him by throwing rocks at the walls. Kaldur signs for a six-dwarf claim via Tick. Deeper still the band finds the lost dwarven mining party: gnomic ceremorphs, flanked by one unusually muscular &#39;mesomorph&#39; mind flayer. Roadie suggests simply asking the kobolds for drugs; Scales delivers; Rico face-chugs the entire bag of crushed red crystals as initiative is rolled.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Scales</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m not a dragon. I&#39;m a dragon bone. There&#39;s a bit of a difference.&rdquo;</li><li>&ldquo;My parents were very experimental.&rdquo;</li><li>&ldquo;Not my monkey, not my circus.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;I filled that hot chick with moonlight.&rdquo;</li><li>&ldquo;Hey, your pickaxes kind of look like moons. Saloon&#39;s blessing on you.&rdquo;</li><li>&ldquo;Short face is fine as long as it&#39;s in service of Saloon.&rdquo;</li><li>&ldquo;Shablagoon.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;I mean, good thing you&#39;re not goblins — because if you were goblins, we wouldn&#39;t have stopped.&rdquo;</li><li>&ldquo;Hey, how about the two of you ask the fucking dwarf that you&#39;re traveling with, what would be appropriate and what wouldn&#39;t be appropriate?&rdquo;</li><li>&ldquo;I guess everyone&#39;s immortal till proven otherwise.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;A flat minor.&rdquo;</li><li>&ldquo;Dreadie Mercurie&#39;s only doing this because it&#39;s the right thing to do.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;m a shadow gnome.&rdquo;</li><li>&ldquo;This is what I saw, my man.&rdquo;</li><li>&ldquo;These are my people.&rdquo;</li><li>&ldquo;What if you don&#39;t have a brain though? Am I okay?&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Rico, don&#39;t put your feet on the table. Stand on your knees.&rdquo;</li><li>&ldquo;I have a pocket that I&#39;ve never used. It could be the cobalt drug pocket.&rdquo;</li><li>&ldquo;Everyone knows the best deposits are further in. Not near the door.&rdquo;</li><li>&ldquo;Two can play that game — and I prestidigitate it all back on.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;Rico, you are my special play — and you have never done anything wrong.&rdquo;</li><li>&ldquo;You like rock? Born of rocky. Suckled from a teat of stone.&rdquo;</li><li>&ldquo;Scales, your track marks are healed up beautifully today. From all the heroin you did yesterday.&rdquo;</li><li>&ldquo;He&#39;s a remora for vagina.&rdquo;</li><li>&ldquo;The last person we did short face Jr., we put him on the inverted rack. It stretches.&rdquo;</li><li>&ldquo;It is trap. It is trap. Not used that way — no, we Kuban broke, we we fix lift, we we fix trap too, but we not use it as trap. Promise, on Dat&#39;s honor.&rdquo;</li><li>&ldquo;Dreadie Mercurie, it is just like being covered in a giant king-size comforter.&rdquo;</li><li>&ldquo;William Moon tells you, Rico — it&#39;s better. Just let it finish.&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">7</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 51.6%"></span>
+        <span class="talkbar-pct">52%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">115m 24s</span>
+        <span class="talkbar-val-words">13,871 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 20.0%"></span>
+        <span class="talkbar-pct">20%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">44m 47s</span>
+        <span class="talkbar-val-words">6,882 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 9.8%"></span>
+        <span class="talkbar-pct">10%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">22m 00s</span>
+        <span class="talkbar-val-words">2,501 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 7.2%"></span>
+        <span class="talkbar-pct">7%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">16m 01s</span>
+        <span class="talkbar-val-words">1,703 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 3.9%"></span>
+        <span class="talkbar-pct">4%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">8m 42s</span>
+        <span class="talkbar-val-words">1,217 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 3.8%"></span>
+        <span class="talkbar-pct">4%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">8m 29s</span>
+        <span class="talkbar-val-words">1,185 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">bad token</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 3.7%"></span>
+        <span class="talkbar-pct">4%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">8m 15s</span>
+        <span class="talkbar-val-words">886 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Kaldur Gravelgut</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 8 session(s) chronicled
+     · last updated 2026-11-13T21:37:44Z
+  </footer>
+  
+  
+  <script data-goatcounter="https://joetastic.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+  
+</body>
+</html>
