@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 10: Alec Loves Alex Jones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 10: Alec Loves Alex Jones
+    
+    <a class="transcript-link" href="sessions_2026-11-17-alec-loves-alex-jones_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>The Moonmobile&#39;s expedition into Tourmaline&#39;s gem mine opens still staring down the lost dwarven mining party — gnomic ceremorphs flanking a muscle-bound &#39;mesomorph&#39; mind flayer with a two-handed blade and a scar across one eye. Before Rico can regret face-chugging the bag of kobold red crystals, a ceremorph levels a conical glass stair-stepped laser pistol — and the fight becomes a scramble for who gets one first.</p>
+    
+      
+      <p>Roadie grapples the gunner and dangles him on a rope over the pit, pointedly refusing to kill him. Scales teleports in with Kinny Jay&#39;s glove and the brass bell, takes a halberd, and marks the big one as hunted prey. The mesomorph counter-attacks by driving tentacles into every orifice Scales has — which Scales&#39; greased-up anus repeatedly rebuffs — while Dreadie&#39;s Heat Metal forces the Mind Blade out of his hands. Kaldur, watching the little ceremorph dominate Roadie into jet-black eyes, reads the glow and realizes there&#39;s no elder brain here. This mesomorph is a replacement hive-mind conduit, and he&#39;s doing it badly.</p>
+    
+      
+      <p>Then Dreadie decides to acrobat across the chasm. DC 16. He fails by six. Thirty-one points of fall damage leave him at five HP at the bottom of the pit — no teeth, eyes swollen shut, legs &#39;like some sort of pasta dish.&#39; William Moon appears next to him with a sprawling contract Dreadie can&#39;t read; a bloody thumbprint takes care of consent, and his legs reknit. The fine print: declare publicly that William Moon saved you, full-back tattoo within six months, carte blanche retaliation clause buried in the subtext. &#39;By the power of William,&#39; Dreadie deadpans up at the fight, &#39;I smite you&#39; — and vicious-mockeries a ceremorph into paste. &#39;That&#39;s convert number four for Rico.&#39;</p>
+    
+      
+      <p>Kaldur caps combat by grabbing one of the dropped laser pistols — autistic-artificer-who-just-saw-the-internet gaping — and squeezing a shot that turns a ceremorph&#39;s head into a canoe. He eyes the gun like Vlad the Impaler meeting Marshmallow memes. Scales imbues his spear with necrotic energy (&#39;abominations must perish&#39;) and nearly drops Tharsarelli; Enjee finishes the mesomorph with a thunder blast 20 points over, splattering him into &#39;a pretty picture.&#39; The band loots his psychic-damage greatsword, three laser pistols, a six-dwarf claim&#39;s worth of amethysts (~6000 gp from the surface alone), and a doer-purple spell gem for Scales.</p>
+    
+      
+      <p>A trap-door staircase reveals Tharsarelli&#39;s workshop and his biography. Letters confirm he was the last survivor of four ceremorph handmaidens to the elder brain Zilix-4, who once tried to bind himself to a kraken&#39;s brain and was thwarted at the Ruins of a Scar in the Sea of Swords by a hero named Theagenes and a poop-addicted doctor called Tinker Driven. Kaldur walks away with a shelf of magic-item schematics (amulet of health; masterwork trident). Enjee pockets a Cloak of the Manta Ray. Scales finds a far-realm genetic modification chamber and does what Scales does: shoves Thwip in with a loose brain labeled Abby Normal, a spider egg, a giant eye-covered monster hand, and a crystal ball. Enjee, who can&#39;t read a word of any of this, cheerfully flips the switch on a natural 20. Thwip emerges fused with the spider, abdomen-webs included. Spider-Thwip.</p>
+    
+      
+      <p>Scales caps the lab tour by cracking a nearby jar of gas, which turns out to be a bound invisible stalker. The stalker beats Scales unconscious against the wall, then calmly flies back to its jar and shuts the lid itself. Roadie seriously considers tying the jar to his back for later deployment; the jar bubbles threateningly and he reconsiders. He straps the giant eye-covered monster hand to his pack instead — &#39;for when someone loses a hand.&#39;</p>
+    
+      
+      <p>At the Blue Clam, Spider-Thwip skanks on the ceiling like a cockroach-diapered Spider-Man, falls, knocks himself out, and web-shits onto Scales mid-set — which Scales dutifully mixes with his torso oil as grease-styling for the final solo. Dreadie&#39;s first performance under contract manifests as angelic choir overtones behind his harmonies. Rico almost fluffs the number watching Scales&#39; greasy man-titties but remembers his training. The bar pays 30 gp each, and a Luskin music scout slips Scales his information: cylinder-label connections, if they want them. The Chuggy Pig rolls in. Everyone hits level five.</p>
+    
+      
+      <p>During the long rest, Rico reads deeper into the Book of Munnen and finds the Gospel of Answer — a warning about four false friends who try to keep Answer Moonsong in the Shadowfell before he fades: Lagic, Luella, Radivast, Mathis. The one true friend, Trellian, gave Answer a crystal. The book&#39;s transcriber is Answer Moonsong himself — meaning Rico is Zildor Moonsault&#39;s grandson, chosen-of-chosens. Rico asks William Moon for psionic powers to unlock the mind blade; William tells him to dip the sword in sacred waters at Moonsong Hill and chant &#39;Willy Moon Moon.&#39; Meanwhile Dreadie pores over his contract at the bar with the hardest stare a gay man can produce, and Kaldur — the only other person who can see the text — runs a religion check. The contract reads celestial, closer to infernal than fae. No angel would write this. Kaldur&#39;s stomach bottoms out as he asks the question nobody has asked aloud yet: is William Moon a god? William spits out a cup of bad espresso behind him and makes another.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Scales</div>
+        <ul class="quote-list">
+          <li>&ldquo;Abominations must perish.&rdquo;</li><li>&ldquo;Imagine your life before we put you in the machine. Now you can run around on the ceiling! Imagine what this giant fist thing will do!&rdquo;</li><li>&ldquo;Hop in this machine, please.&rdquo;</li><li>&ldquo;Join my friends and I. I may be out of many spell slots but I still got one trick up my sleeve.&rdquo;</li><li>&ldquo;I&#39;ll come to you in case I need a massage or a hand to hold.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;I feel the Moon inside me.&rdquo;</li><li>&ldquo;Moonslide!&rdquo;</li><li>&ldquo;I am the chosen one.&rdquo;</li><li>&ldquo;I&#39;m pretty sure that was William Moon entering you. Feels good, right?&rdquo;</li><li>&ldquo;Yeah, he&#39;s my dad. Don&#39;t tell him what I&#39;m doing, okay?&rdquo;</li><li>&ldquo;William Moon, he loves saloon.&rdquo;</li><li>&ldquo;I just need to bring the blade to Moonsong Hill.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;Some fruity fucking moon god to help me with my aim, very mistaken.&rdquo;</li><li>&ldquo;I&#39;m not an idiot. Who would go for that fucking rope during combat?&rdquo;</li><li>&ldquo;You don&#39;t need to try to use every Eldritch abomination you find in a Mind Flayer&#39;s laboratory, okay?&rdquo;</li><li>&ldquo;Is William Moon a god?&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;I can&#39;t believe this happened. It&#39;s so funny.&rdquo;</li><li>&ldquo;I&#39;m not doubting the falling part. I knew that was definitely a possibility. What I can&#39;t believe happening is the fall damage consequences.&rdquo;</li><li>&ldquo;I only lived because William Moon wanted to fucking get me.&rdquo;</li><li>&ldquo;By the power of William, I smite you.&rdquo;</li><li>&ldquo;Dreadie will be watching the fuck out of this contract.&rdquo;</li><li>&ldquo;My contract legally obligates me to implicate that it was William Moon that saved me.&rdquo;</li><li>&ldquo;This shit just gets more and more ridiculous.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Enjee</div>
+        <ul class="quote-list">
+          <li>&ldquo;What do you need the roll to turn it on?&rdquo;</li><li>&ldquo;You can be a wise asshole.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;I got them guns!&rdquo;</li><li>&ldquo;I&#39;m very tempted to throw these remaining laser pistols into the pit.&rdquo;</li><li>&ldquo;We had ropes, Dreadie! We had ropes!&rdquo;</li><li>&ldquo;I just grab onto his waist and futilely shake it back and forth and up and down and slowly pull him off of scales.&rdquo;</li><li>&ldquo;What if you could harness the laser to be a sustained axe-shaped blade?&rdquo;</li><li>&ldquo;It&#39;s you or me.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;87 feet into a rock chasm. It&#39;s insane that you&#39;re alive.&rdquo;</li><li>&ldquo;Your legs look like some sort of pasta dish.&rdquo;</li><li>&ldquo;Nope, that&#39;s just your ribs coming through your skin.&rdquo;</li><li>&ldquo;He turns this gnome&#39;s head into a canoe. Absolute perfect shot.&rdquo;</li><li>&ldquo;You are not in a position to negotiate. I&#39;m fucking you real hard right now, I&#39;m going to be honest.&rdquo;</li><li>&ldquo;By the way, you have to have that full back tattoo within six months.&rdquo;</li><li>&ldquo;You often meet your fate on the road you take to avoid it.&rdquo;</li><li>&ldquo;Thwip is the sound Spider-Man makes when he exudes his webs.&rdquo;</li><li>&ldquo;Your anus is so greasy that he&#39;s finding a hard time finding purchase.&rdquo;</li><li>&ldquo;He&#39;s one red pussy hair away from death.&rdquo;</li><li>&ldquo;The molester has become the molestee.&rdquo;</li><li>&ldquo;Scales, you can climb up that rope? No, sir. Not with your beef.&rdquo;</li><li>&ldquo;You could ride your own hand as a mount.&rdquo;</li><li>&ldquo;This is some weird far realm shit — who the fuck designs the control?&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">7</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 46.6%"></span>
+        <span class="talkbar-pct">47%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">100m 53s</span>
+        <span class="talkbar-val-words">11,847 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 13.3%"></span>
+        <span class="talkbar-pct">13%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">28m 47s</span>
+        <span class="talkbar-val-words">4,657 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 10.8%"></span>
+        <span class="talkbar-pct">11%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">23m 22s</span>
+        <span class="talkbar-val-words">2,840 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">bad token</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 9.5%"></span>
+        <span class="talkbar-pct">9%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">20m 29s</span>
+        <span class="talkbar-val-words">1,766 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 9.2%"></span>
+        <span class="talkbar-pct">9%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">19m 57s</span>
+        <span class="talkbar-val-words">2,013 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">funkeebuddha</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 5.5%"></span>
+        <span class="talkbar-pct">5%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">11m 52s</span>
+        <span class="talkbar-val-words">1,281 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 5.1%"></span>
+        <span class="talkbar-pct">5%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">11m 01s</span>
+        <span class="talkbar-val-words">1,539 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Kaldur Gravelgut</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Rico Lunae</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Dreadie Mercurie</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Enjee</span></span>
+      <span class="entry-meta tally"><b>2</b> kills</span></div>
+    
+    
+    <div class="entry"><span class="seal failed"></span>
+      <span><span class="entry-title" style="font-size:1rem">Scales</span></span>
+      <span class="entry-meta tally"><b>1</b> knocked unconscious</span></div>
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 9 session(s) chronicled
+     · last updated 2026-11-24T02:59:59Z
+  </footer>
+  
+  
+  <script data-goatcounter="https://joetastic.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+  
+</body>
+</html>
