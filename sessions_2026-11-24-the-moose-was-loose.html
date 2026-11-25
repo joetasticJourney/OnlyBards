@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Bards — Session 11: The Moose was Loose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('onlybards-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* localStorage disabled — fall back to light */ }
+    })();
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top">
+        <div class="masthead-brand">
+          <a href="index.html" class="masthead-logo-link">
+            <img src="images/onlybards.png" alt="Only Bards logo" class="masthead-logo">
+          </a>
+          <h1 class="wordmark">Only <span class="flourish">Bards</span></h1>
+        </div>
+        <button class="theme-toggle" type="button"
+                aria-label="Toggle dark mode" title="Toggle dark mode"
+                onclick="onlyBardsToggleTheme()">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+      <nav class="ledger-nav">
+        <a href="index.html" class="">Ledger</a>
+        <a href="characters.html" class="">Characters</a>
+        <a href="enemies.html" class="">Enemies</a>
+        <a href="gigs.html" class="">Gigs</a>
+        <a href="quests.html" class="">Quests &amp; Threads</a>
+        <a href="lore.html" class="">Lore</a>
+        <a href="moon.html" class="">Moon</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    /* Sync the toggle icon with the current theme on load, then flip on click. */
+    (function () {
+      var iconFor = function (theme) { return theme === 'dark' ? '☀' : '☾'; };
+      var iconEl = document.getElementById('theme-icon');
+      if (iconEl) {
+        iconEl.textContent = iconFor(document.documentElement.getAttribute('data-theme'));
+      }
+      window.onlyBardsToggleTheme = function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        if (next === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try { localStorage.setItem('onlybards-theme', next); } catch (e) {}
+        if (iconEl) iconEl.textContent = iconFor(next);
+      };
+    })();
+  </script>
+  <main>
+    
+  <div class="eyebrow"><a class="plain" href="index.html">← Ledger</a></div>
+  <h2 class="section-head">Session 11: The Moose was Loose
+    
+    <a class="transcript-link" href="sessions_2026-11-24-the-moose-was-loose_transcript.html">Read transcript →</a>
+    
+  </h2>
+
+  
+  <div class="narrative">
+    
+      
+      <p>Half the band is out before the session starts. Scales is in the Chuggy Pig doing heroin &#39;the whole day and night&#39; and Enjee never shows. The three bards who remain re-sync their sheets and the Moonmobile strap-locks to the Chuggy Pig for the run to Lonelywood.</p>
+    
+      
+      <p>Ten miles out, something flattened on the road: a gored male in fur-lined winter gear, right shin crushed, entrails out. Rico eyes the hoof prints and calls it — a moose, specifically one with antlers, specifically possessed by Shar. Roadie sprinkles crack on the body and tries Spare the Dying on it (rolls a 3), then rolls the corpse up on his pizza peel &#39;as is tradition&#39; and tucks it under the carriage. Also spotted along the southern coastline: a glowing-purple Chardalyn Tree installation, fenced off like the first zone of an MMO expansion.</p>
+    
+      
+      <p>In Lonelywood, Nipsey Huddle (the town speaker) greets the band at The Lucky Liar and Danae Zotal — a deadpan goth bartender — negotiates them down to 30 gp. Danae IDs the dead man as one of Nirth Max Zildanar&#39;s pilferers out of Targos. Harry Jack and the boys — werewolf hunters who, per Kaldur&#39;s Arcana, &#39;smell like dog urine and are covered in wolf fur&#39; and are themselves werewolves — are camped at the sketchy table pitching themselves for the ghost-moose bounty; Roadie gifts them a pitcher with a handful of ayahuasca mystery-powder in it, winks Brunhilde the Goliath dancer a backstage pass (she snaps a carrot clean in half with her vag, catapulting half of it into his chin — &#39;Dio works in mysterious ways&#39;), and Rico oils up Yorlt behind the bar until his huge dick drips off.</p>
+    
+      
+      <p>The gig starts with the entire tripping crowd formed into a Zion-rave pile and Dreadie flouncing Freddie-style around the mic stand under soft purple and pink lights. Kaldur freezes mid-bass line when Danae makes extended direct eye contact (&#39;oh god she&#39;s still looking at me, oh god she&#39;s still looking at me&#39;); Rico leaps across the stage, bounces off him like a granite statue, and finishes his guitar solo on his knees at Kaldur&#39;s girdle with grease-drip spattering. The crowd exalts — some spontaneously sprouting dreadlocks — and the gig lands clean. 30 gp each plus 2 gp in ayahuasca-victim tips.</p>
+    
+      
+      <p>Out in the parking lot, Rico baptizes Yorlt as a Latter-Day Selunite — &#39;By the power of the moon I possess the wherewithal&#39; — and William Moon pops in with the &#39;will-you-moon&#39; robot hand-gesture to confirm the convert and personally interview the goliath. Yorlt asks what it feels like when William comes inside followers; William earnestly describes &#39;feeling every inch of it.&#39; Dreadie, watching from around the corner, is physically restraining a laugh. Rico teaches Yorlt the dance-away-the-gay exercise (&#39;push those thoughts way down&#39;) and recommends Anzor&#39;s Moon Straight School — ASS — a Moonanite conversion academy that he&#39;s, unprompted, now canon-named.</p>
+    
+      
+      <p>William Moon slides into Dreadie&#39;s table drinking from a silver goblet shaped as a serpent coiled all the way around the cup, poured full of mead &#39;my brother made.&#39; Dreadie quirks a brow at that — the serpent iconography, the brother, the honey mead — none of it looks like Selûne&#39;s lane. William demands Dreadie write a song about him, but keep him anonymized — &#39;operate in the shadows, call me Flash Gordon in the chorus.&#39; Dreadie drafts the working title &#39;The Trick of the Moonlight.&#39; Before William poofs, the contract updates: Dreadie is now required to address William as &#39;Big Daddy.&#39; Dreadie salutes the exit with a cheerful &#39;Later, Big Daddy!&#39; and then cheers up at the empty table — &#39;Dreadie tolerates you!&#39;</p>
+    
+      
+      <p>Kaldur, meanwhile, raw-dogs a four-hour bar conversation with Danae, deep in Gnomish red wine, where every single pass sails three feet over his head until she literally asks &#39;Would you like to hook up?&#39; He does. Dreadie, watching from the tavern door, delivers an inward-turned thumbs-up as Kaldur stumbles back toward the Chuggy Pig with Danae&#39;s hair significantly disheveled. In the mead-warm afterglow, Danae gets drunk-sad on him — the bar emptying out around her — and nobody asks about the rug under the barstool with the suspiciously short leg, the one Kaldur&#39;s Nat-20 insight placed directly over Dzan&#39;s trap-door lair.</p>
+    
+      
+      <p>Two days from the full moon, the band heads out to finish the actual quest. The ghost moose manifests in the moonlight, materializes corporeal on d6 of 4-5-6 each round, and tramples Rico into the dirt before he can finish shouting &#39;William Moon!&#39; Kaldur, who shaped his new ghost axe from the hunt for exactly this, attunes the handle to the moose&#39;s spectral vibration until his hands buzz at the same frequency as the ghost itself — &#39;like hitting a fucking tree stump&#39; — and fells it clean. Roadie rides the help-action loop every round while Vrock, his familiar, flaps in for the flying attacks; Bo Vine, the cow-man security, stays with the Chuggy Pig in his old Zeke Gator band shirt. The speakers&#39; pooled bounty (minus Dugan&#39;s Hole) comes in at 1000 gp, 250 each. On the ride out, Rico and Kaldur bicker about plate armor — &#39;everybody knows you don&#39;t need protection on the legs, tenet 60: always skip leg day&#39; — and the Chuggy Pig turns south for Bremen.</p>
+    
+  </div>
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <h2 class="section-head">Best quotes</h2>
+  <div class="quotes-groups">
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Rico Lunae</div>
+        <ul class="quote-list">
+          <li>&ldquo;Have you heard the good news about William Moon?&rdquo;</li><li>&ldquo;Are you ready to have the moon inside you?&rdquo;</li><li>&ldquo;By the power of the moon, I possess the wherewithal.&rdquo;</li><li>&ldquo;Dancing is always good. You dance it out. And while you dance you gotta think about the gay thoughts and shove them way down.&rdquo;</li><li>&ldquo;Just turn it off like a light switch. You&#39;re snuffing out a torch.&rdquo;</li><li>&ldquo;That&#39;s how William Moon drives away the gay.&rdquo;</li><li>&ldquo;Everybody knows you don&#39;t need protection on the legs.&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Kaldur Gravelgut</div>
+        <ul class="quote-list">
+          <li>&ldquo;I can wire a motherboard. Okay, I can handle your vagina.&rdquo;</li><li>&ldquo;Hopes he can fix her if she ends up being an evil red wizard. I can fix it.&rdquo;</li><li>&ldquo;Pussies feel good.&rdquo;</li><li>&ldquo;I&#39;m just trying to treat it with some respect, alright?&rdquo;</li><li>&ldquo;Dwarves give a shit about endangered species.&rdquo;</li><li>&ldquo;I don&#39;t scream &#39;by the power of Dumathoin or Klangadin or fucking Nardim and Mordoon&#39; every time I kill something. It&#39;s just sort of implied.&rdquo;</li><li>&ldquo;I suppose paraplegics don&#39;t…&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Dreadie Mercurie</div>
+        <ul class="quote-list">
+          <li>&ldquo;Caldery values rare gems, so I can understand why he&#39;s been staring at you all night.&rdquo;</li><li>&ldquo;Yes, oh master of moonlight — please enlighten us.&rdquo;</li><li>&ldquo;Don&#39;t you think serpentry imagery would be proper for your song, Flash Gordon?&rdquo;</li><li>&ldquo;Dreadie needs a shower.&rdquo;</li><li>&ldquo;Later, Big Daddy!&rdquo;</li><li>&ldquo;Tolerate you!&rdquo;</li>
+        </ul>
+      </div>
+    
+      <div class="quote-group">
+        <div class="quote-speaker">Roadie</div>
+        <ul class="quote-list">
+          <li>&ldquo;I&#39;ll sprinkle some crack on him, I guess.&rdquo;</li><li>&ldquo;Dio works in mysterious ways.&rdquo;</li><li>&ldquo;Dio always blesses those who truly rock.&rdquo;</li><li>&ldquo;Six pitchers of ale, please.&rdquo;</li><li>&ldquo;You guys got any ghost chains to catch a ghost moose?&rdquo;</li><li>&ldquo;I don&#39;t remember paying for this bag of meth.&rdquo;</li><li>&ldquo;Maybe just a little introspection. Anyway, enjoy the show.&rdquo;</li>
+        </ul>
+      </div>
+    
+    
+      <div class="quote-group">
+        <div class="quote-speaker">DM (havelgravelgut)</div>
+        <ul class="quote-list">
+          <li>&ldquo;She puts the carrot down below the table and you hear a snap, and then a piece of a carrot launches up and hits you in the chin.&rdquo;</li><li>&ldquo;Your anus is finding a hard time… wait, wrong session. Try: you misspot the carrot.&rdquo;</li><li>&ldquo;By the power of science you damage this ghost — it is like you are hitting a fucking tree stump.&rdquo;</li><li>&ldquo;Through your drug pockets, Jesus Christ.&rdquo;</li><li>&ldquo;I like to imagine it also smells like apples and cinnamon, because that&#39;s what I imagine she smelled like.&rdquo;</li><li>&ldquo;Pussies feel good.&rdquo;</li><li>&ldquo;Oh, you misspot. The core of the moon is molten. It&#39;s not active. It&#39;s a dead rock.&rdquo;</li><li>&ldquo;Don&#39;t you read books? Full damage applied to the ghost moose.&rdquo;</li><li>&ldquo;Howdy doody, boys.&rdquo;</li><li>&ldquo;Tenet number 60: always skip leg day.&rdquo;</li><li>&ldquo;Nightmare strobes and cortisol sprayers — I made six of them.&rdquo;</li><li>&ldquo;Bunga Bunga Dwama, this is really unnecessarily cruel to Kaldur Gravelgut.&rdquo;</li><li>&ldquo;Would you like to hook up?&rdquo;</li>
+        </ul>
+      </div>
+    
+  </div>
+  
+
+  <h2 class="section-head">Who held the floor <span class="count">5</span></h2>
+  <div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">havelgravelgut</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 54.9%"></span>
+        <span class="talkbar-pct">55%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">93m 47s</span>
+        <span class="talkbar-val-words">11,145 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ebondawn</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 18.2%"></span>
+        <span class="talkbar-pct">18%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">31m 05s</span>
+        <span class="talkbar-val-words">5,078 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">whygod4007</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 12.3%"></span>
+        <span class="talkbar-pct">12%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">20m 59s</span>
+        <span class="talkbar-val-words">2,398 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">troyjohnsen</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 9.4%"></span>
+        <span class="talkbar-pct">9%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">16m 07s</span>
+        <span class="talkbar-val-words">1,711 words</span>
+      </span>
+    </div>
+    
+    <div class="talkbar-row">
+      <span class="talkbar-name">ashtonias</span>
+      <span class="talkbar-track">
+        <span class="talkbar-fill" style="width: 5.1%"></span>
+        <span class="talkbar-pct">5%</span>
+      </span>
+      <span class="talkbar-val">
+        <span class="talkbar-val-time">8m 43s</span>
+        <span class="talkbar-val-words">1,076 words</span>
+      </span>
+    </div>
+    
+  </div>
+
+  
+  <h2 class="section-head">Deeds heard this session</h2>
+  <div class="ledger">
+    
+    <div class="entry"><span class="seal dead"></span>
+      <span><span class="entry-title" style="font-size:1rem">Kaldur Gravelgut</span></span>
+      <span class="entry-meta tally"><b>1</b> kills</span></div>
+    
+    
+    
+  </div>
+  <p class="entry-sub" style="margin-top:0.6rem">Only what the table narrated aloud is counted.</p>
+  
+
+  </main>
+  <footer>
+    Kept locally on your machine · 10 session(s) chronicled
+     · last updated 2026-11-25T00:22:50Z
+  </footer>
+  
+  
+  <script data-goatcounter="https://joetastic.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+  
+</body>
+</html>
